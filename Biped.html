@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <title>Project Name — Dominic Nguyen</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Match your existing portfolio fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
+
+    <style>
+        /* ── Reset & Base ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --dark:    #1a1a1a;
+            --mid:     #2d2d2d;
+            --light:   #f5f5f5;
+            --white:   #ffffff;
+            --accent:  #888;
+            --border:  #e0e0e0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        /* ── Navigation (matches your main site) ── */
+        #navigation {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--dark);
+            padding: 18px 0;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-text {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 300;
+            font-size: 1.4rem;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .back-link {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--white); }
+
+        /* ── Hero ── */
+        #hero {
+            background: var(--dark);
+            color: var(--white);
+            padding: 90px 30px 70px;
+            text-align: center;
+        }
+
+        .project-category {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 0.78rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        #hero h1 {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 200;
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            letter-spacing: 0.04em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero-byline {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Hero Image ── */
+        .hero-image-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            transform: translateY(40px);
+        }
+
+        .hero-image-wrap img {
+            width: 100%;
+            display: block;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        /* ── Content ── */
+        #content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 30px 60px;
+        }
+
+        /* ── Section title (matches your "block_title") ── */
+        .block_title {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 200;
+            font-size: 2rem;
+            letter-spacing: 0.08em;
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .section-rule {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .section-rule::before,
+        .section-rule::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ── Overview ── */
+        #overview {
+            margin-bottom: 70px;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .overview-text p {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 16px;
+        }
+
+        .meta-list {
+            list-style: none;
+            border-top: 1px solid var(--border);
+        }
+
+        .meta-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.88rem;
+        }
+
+        .meta-list li .label {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            color: var(--accent);
+            padding-top: 2px;
+        }
+
+        .meta-list li .value {
+            font-weight: 400;
+            color: var(--dark);
+            text-align: right;
+        }
+
+        /* ── Details / Skills tags ── */
+        #details {
+            margin-bottom: 70px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .tag {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1px solid var(--dark);
+            padding: 5px 14px;
+            color: var(--dark);
+        }
+
+        /* ── Steps / Process ── */
+        #process {
+            margin-bottom: 70px;
+        }
+
+        .steps {
+            counter-reset: step;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 48px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .step-num {
+            counter-increment: step;
+            font-family: 'Dosis', sans-serif;
+            font-weight: 200;
+            font-size: 2rem;
+            color: var(--border);
+            line-height: 1;
+        }
+
+        .step-body h4 {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 400;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            letter-spacing: 0.04em;
+        }
+
+        .step-body p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* ── Gallery ── */
+        #gallery {
+            margin-bottom: 70px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            display: block;
+            border: 1px solid var(--border);
+            transition: opacity 0.2s;
+        }
+
+        .gallery-grid img:hover { opacity: 0.85; }
+
+        /* ── Back to projects CTA ── */
+        #cta {
+            text-align: center;
+            padding: 60px 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .btn-outline {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 0.82rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--dark);
+            border: 1px solid var(--dark);
+            padding: 14px 36px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--dark);
+            color: var(--accent);
+            text-align: center;
+            padding: 24px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 680px) {
+            .overview-grid { grid-template-columns: 1fr; gap: 30px; }
+            .gallery-grid  { grid-template-columns: 1fr; }
+            .hero-image-wrap { transform: translateY(20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <section id="navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="logo-text">Dominic Nguyen</a>
+            <a href="index.html#portfolio" class="back-link">← All Projects</a>
+        </div>
+    </section>
+
+    <!-- Hero -->
+    <section id="hero">
+        <p class="project-category">Capstone Team 21</p>  <!-- EDIT: category / team -->
+        <h1>Trash Retrieval Drone</h1>              <!-- EDIT: project title -->
+        <p class="hero-byline">Mechanical Design &nbsp;·&nbsp; Electrical &nbsp;·&nbsp; Software</p> <!-- EDIT: disciplines -->
+    </section>
+
+    <!-- Hero Image -->
+    <div style="background: var(--dark); padding-bottom: 60px;">
+        <div class="hero-image-wrap">
+            <img src="assets/images/Drone.jpg" alt="Trash Retrieval Drone">  <!-- EDIT: image path -->
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content">
+
+        <!-- Overview -->
+        <section id="overview">
+            <div class="section-rule"><h2 class="block_title">Overview</h2></div>
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <!-- EDIT: replace with your project description -->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. This project involved designing and building an autonomous drone capable of detecting and retrieving trash in outdoor environments.</p>
+                    <p>The system integrates computer vision, a custom mechanical gripper, and real-time flight control to autonomously locate, pick up, and deposit waste items.</p>
+                </div>
+                <ul class="meta-list">
+                    <li><span class="label">Year</span>       <span class="value">2024</span></li>          <!-- EDIT -->
+                    <li><span class="label">Team</span>       <span class="value">Capstone Team 21</span></li> <!-- EDIT -->
+                    <li><span class="label">Duration</span>   <span class="value">8 months</span></li>      <!-- EDIT -->
+                    <li><span class="label">My Role</span>    <span class="value">Mechanical Lead</span></li> <!-- EDIT -->
+                    <li><span class="label">Status</span>     <span class="value">Completed</span></li>     <!-- EDIT -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Used -->
+        <section id="details">
+            <div class="section-rule"><h2 class="block_title">Skills Used</h2></div>
+            <div class="tags">
+                <!-- EDIT: add/remove tags to match your project -->
+                <span class="tag">CAD / SolidWorks</span>
+                <span class="tag">3D Printing</span>
+                <span class="tag">Python</span>
+                <span class="tag">ROS</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">PCB Design</span>
+                <span class="tag">PID Control</span>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section id="process">
+            <div class="section-rule"><h2 class="block_title">Process</h2></div>
+            <div class="steps">
+                <!-- EDIT: replace with your actual process steps -->
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <div class="step-body">
+                        <h4>Research &amp; Requirements</h4>
+                        <p>Defined payload capacity, flight time targets, and detection accuracy goals. Surveyed existing drone platforms to select the right base frame.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <div class="step-body">
+                        <h4>Mechanical Design</h4>
+                        <p>Designed a lightweight gripper mechanism in SolidWorks and iterated through three prototype versions using FDM 3D printing before finalising the geometry.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <div class="step-body">
+                        <h4>Electronics &amp; Integration</h4>
+                        <p>Integrated a Raspberry Pi with a camera module and custom ESC wiring harness. Tuned PID gains for stable hover with gripper load.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">04</div>
+                    <div class="step-body">
+                        <h4>Testing &amp; Results</h4>
+                        <p>Conducted field tests achieving 85% retrieval success rate on standardised litter objects. Final demo performed in front of faculty panel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery">
+            <div class="section-rule"><h2 class="block_title">Gallery</h2></div>
+            <div class="gallery-grid">
+                <!-- EDIT: replace src with your actual project images -->
+                <img src="assets/images/Drone.jpg"   alt="Drone overview">
+                <img src="assets/images/Drone.jpg"   alt="Gripper detail">
+                <img src="assets/images/Drone.jpg"   alt="Electronics">
+                <img src="assets/images/Drone.jpg"   alt="Field test">
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="cta">
+            <a href="index.html#portfolio" class="btn-outline">← Back to all projects</a>
+        </section>
+
+    </div><!-- /content -->
+
+    <footer>
+        &copy; 2024 Dominic Nguyen
+    </footer>
+
+</body>
+</html>
