@@ -412,13 +412,21 @@
             <div style="margin-bottom: 50px;">
                 <h3 style="font-family: 'Dosis', sans-serif; font-weight: 300; font-size: 1.3rem; letter-spacing: 0.06em; margin-bottom: 14px;">Mechanical Design</h3>
                 <img src="assets/images/GrassExplosion.jpg" alt="Component" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
-                <p style="font-size: 0.97rem; color: #555; line-height: 1.85;">EDIT: Write about this component here. What it does, why you chose it, how it fits into the overall system.</p>
+                <p style="font-size: 0.97rem; color: #555; line-height: 1.85;">Grass was designed to be printed almost entirely out of PLA, with the exception of the 
+                    tires and the front and back bumpers, to save on both time and costs. Since we knew that the robot would frequently fall over during balance tests, we chose to print the bumpers out of TPU to help 
+                    with shock absorption. This also helped to protect the electronics hidden in the chassis, including the battery, microcontroller, and motor controller. To make the robot
+                    easier to balance, we chose to keep the centre of mass of the robot high at a height of 20cm with respect to the wheels. This came from our intuition and calculations from estimating the system as an ideal inverted pendulum.
+                    To keep the system as close to our estimation as possible, we designed the legs of the robot to be thin and with weight-saving holes where possible.</p>
             </div>
         
             <div style="margin-bottom: 50px;">
                 <h3 style="font-family: 'Dosis', sans-serif; font-weight: 300; font-size: 1.3rem; letter-spacing: 0.06em; margin-bottom: 14px;">Components</h3>
                 <img src="assets/images/GrassCircuit.jpg" alt="Component" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
-                <p style="font-size: 0.97rem; color: #555; line-height: 1.85;">EDIT: Write about this component here.</p>
+                <p style="font-size: 0.97rem; color: #555; line-height: 1.85;">The components used in this project consist of a microcontroller, two brushed DC motors with encoders, an inertial measurement unit, a 
+                    3S Lithium Polymer battery, a buck converter, and a dual channel DC motor controller. One of our most important parameters was cost, having an ideal budget of $200. For that reason, the microcontroller 
+                    we chose was the ESP32 WROOM Module which comes with an onboard bluetooth chip and a dual core processor. For a robot of this level of complexity, we found stronger microcontrollers, such as the teensy 
+                    4.1, to be overkill and weaker ones, like arduino, to be insufficient. The motor we chose for our wheels was the FIT0493 DC motor which is a 350RPM 12V motor with a rated stall torque 
+                    of 12 kgcm. At a price of $60, the motor came with a high resolution quadrature encoder at 374 pulses per revolution and sufficient torque for the robot to drive forwards and backwards.</p>
             </div>
         
             <div style="margin-bottom: 50px;">
