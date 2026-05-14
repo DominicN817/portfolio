@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-    <title>Project Name — Dominic Nguyen</title>
+    <title>Cycloidal Gearbox · Dominic Nguyen</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Match your existing portfolio fonts -->
     <link href='https://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
 
     <style>
-        /* ── Reset & Base ── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
@@ -33,7 +31,7 @@
             line-height: 1.7;
         }
 
-        /* ── Navigation (matches your main site) ── */
+        /* ── Navigation ── */
         #navigation {
             position: sticky;
             top: 0;
@@ -110,9 +108,9 @@
 
         /* ── Hero Image ── */
         .hero-image-wrap {
-            max-width: 900px;
+            max-width: 600px;
             margin: 0 auto;
-            transform: translateY(40px);
+            transform: translateY(-50px);
         }
 
         .hero-image-wrap img {
@@ -129,7 +127,6 @@
             padding: 80px 30px 60px;
         }
 
-        /* ── Section title (matches your "block_title") ── */
         .block_title {
             font-family: 'Dosis', sans-serif;
             font-weight: 200;
@@ -202,7 +199,7 @@
             text-align: right;
         }
 
-        /* ── Details / Skills tags ── */
+        /* ── Tags ── */
         #details {
             margin-bottom: 70px;
         }
@@ -225,16 +222,9 @@
             color: var(--dark);
         }
 
-        /* ── Steps / Process ── */
+        /* ── Reflection steps ── */
         #process {
             margin-bottom: 70px;
-        }
-
-        .steps {
-            counter-reset: step;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
         }
 
         .step {
@@ -245,7 +235,6 @@
         }
 
         .step-num {
-            counter-increment: step;
             font-family: 'Dosis', sans-serif;
             font-weight: 200;
             font-size: 2rem;
@@ -266,27 +255,7 @@
             color: #555;
         }
 
-        /* ── Gallery ── */
-        #gallery {
-            margin-bottom: 70px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-
-        .gallery-grid img {
-            width: 100%;
-            display: block;
-            border: 1px solid var(--border);
-            transition: opacity 0.2s;
-        }
-
-        .gallery-grid img:hover { opacity: 0.85; }
-
-        /* ── Back to projects CTA ── */
+        /* ── CTA ── */
         #cta {
             text-align: center;
             padding: 60px 30px;
@@ -324,10 +293,45 @@
             text-transform: uppercase;
         }
 
+        /* ── Component headings ── */
+        .component-heading {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 300;
+            font-size: 1.3rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 14px;
+        }
+
+        .component-text {
+            font-size: 0.97rem;
+            color: #555;
+            line-height: 1.85;
+        }
+
+        /* ── Callout box ── */
+        .callout {
+            border-left: 3px solid var(--dark);
+            padding: 16px 20px;
+            background: var(--light);
+            margin: 24px 0;
+            font-size: 0.94rem;
+            color: #444;
+        }
+
+        .callout strong {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 6px;
+            color: var(--accent);
+        }
+
         /* ── Responsive ── */
         @media (max-width: 680px) {
             .overview-grid { grid-template-columns: 1fr; gap: 30px; }
-            .gallery-grid  { grid-template-columns: 1fr; }
             .hero-image-wrap { transform: translateY(20px); }
         }
     </style>
@@ -344,15 +348,15 @@
 
     <!-- Hero -->
     <section id="hero">
-        <p class="project-category">Dominic Nguyen</p>  <!-- EDIT: category / team -->
-        <h1>25:1 Cycloidal Reducer</h1>              <!-- EDIT: project title -->
-        <p class="hero-byline">Mechanical Design</p> <!-- EDIT: disciplines -->
+        <p class="project-category">Dominic Nguyen</p>
+        <h1>Cycloidal Gearbox</h1>
+        <p class="hero-byline">Mechanical Design &nbsp;·&nbsp; CAD &nbsp;·&nbsp; 3D Printing</p>
     </section>
 
     <!-- Hero Image -->
     <div style="background: var(--dark); padding-bottom: 60px;">
         <div class="hero-image-wrap">
-            <img src="assets/images/CycloidalReducer.jpg" alt="Cycloidal Reducer">  <!-- EDIT: image path -->
+            <img src="assets/images/CycloidalGearbox.jpg" alt="25 to 1 Cycloidal Gearbox">
         </div>
     </div>
 
@@ -364,14 +368,17 @@
             <div class="section-rule"><h2 class="block_title">Overview</h2></div>
             <div class="overview-grid">
                 <div class="overview-text">
-                    <!-- EDIT: replace with your project description -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. This project involved designing and building an autonomous drone capable of detecting and retrieving trash in outdoor environments.</p>
-                    <p>The system integrates computer vision, a custom mechanical gripper, and real-time flight control to autonomously locate, pick up, and deposit waste items.</p>
+                    <p>This project is a compact cycloidal gearbox designed to significantly increase the output torque of a NEMA 23 stepper motor. A cycloidal drive achieves speed reduction through the eccentric rolling motion of cycloidal discs against a ring of pins, allowing for a high reduction ratio in a very small package.</p>
+                    <p>The gearbox was designed, modelled, and printed entirely in-house. The drive runs at a reduction ratio of twenty-five to one and uses a dual disc arrangement offset by half a pitch to balance eccentric loads and reduce vibration. Nylon spacers are used at all contact points to reduce friction, with PLA pins inside the outer nylon spacers and M3 bolts carrying the inner nylon spacers. Efficiency testing against the NEMA 23's stall torque yielded a measured output of seventy-two percent.</p>
+                    <p>The project served as a deep dive into the geometry of cycloidal mechanisms, the tolerances involved in 3D printed drivetrains, and the practical tradeoffs between gear ratio, efficiency, and backlash in compact actuator design.</p>
                 </div>
                 <ul class="meta-list">
-                    <li><span class="label">Year</span>       <span class="value">2025</span></li>          <!-- EDIT -->
-                    <li><span class="label">Duration</span>   <span class="value">2 months</span></li>      <!-- EDIT -->
-                    <li><span class="label">Status</span>     <span class="value">Completed</span></li>     <!-- EDIT -->
+                    <li><span class="label">Year</span>           <span class="value">2026</span></li>
+                    <li><span class="label">My Role</span>        <span class="value">Sole Designer</span></li>
+                    <li><span class="label">Motor</span>          <span class="value">NEMA 23 Stepper</span></li>
+                    <li><span class="label">Reduction Ratio</span><span class="value">25 : 1</span></li>
+                    <li><span class="label">Measured Efficiency</span><span class="value">72%</span></li>
+                    <li><span class="label">Status</span>         <span class="value">Completed</span></li>
                 </ul>
             </div>
         </section>
@@ -380,52 +387,87 @@
         <section id="details">
             <div class="section-rule"><h2 class="block_title">Skills Used</h2></div>
             <div class="tags">
-                <!-- EDIT: add/remove tags to match your project -->
-                <span class="tag">CAD / SolidWorks</span>
-                <span class="tag">3D Printing</span>
+                <span class="tag">CAD / OnShape</span>
+                <span class="tag">3D Printing (PLA)</span>
+                <span class="tag">Cycloidal Geometry</span>
+                <span class="tag">Tolerance Analysis</span>
+                <span class="tag">Mechanical Design</span>
+                <span class="tag">Efficiency Testing</span>
+                <span class="tag">Stepper Motor Integration</span>
             </div>
+        </section>
+
+        <!-- Details -->
+        <section id="components" style="margin-bottom: 70px;">
+            <div class="section-rule"><h2 class="block_title">Details</h2></div>
+
+            <!-- How it works -->
+            <div style="margin-bottom: 50px;">
+                <h3 class="component-heading">How a Cycloidal Drive Works</h3>
+                <img src="assets/images/CycloidalSection.png" alt="Cycloidal gearbox cross section" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
+                <p class="component-text">A cycloidal drive reduces speed through the eccentric rolling motion of a cycloidal disc. An eccentric bearing on the input shaft causes the disc to wobble in a circular path. The outer edge of the disc is shaped as a curtate cycloid and rolls against a ring of fixed outer pins on the housing, causing the disc to rotate slowly in the opposite direction to the input. Output pins pass through holes in the disc and transfer this slow rotation to the output shaft, cancelling the wobble and producing smooth, concentric rotation.</p>
+                <p class="component-text" style="margin-top: 12px;">The reduction ratio is determined by the number of outer pins. With twenty-five pins, the disc completes one full rotation for every twenty-five rotations of the input. Because many pins are in contact with the disc simultaneously, the load is distributed across multiple contact points at once, making cycloidal drives highly compact and resistant to shock loading compared to spur or planetary gear arrangements.</p>
+                <p class="component-text" style="margin-top: 12px;">This design uses two cycloidal discs stacked and offset by half a pitch from each other. This balances the eccentric load on the input bearing, reduces vibration at speed, and smooths the output torque by ensuring continuous engagement between the discs and the pin ring throughout the full rotation cycle.</p>
+            </div>
+
+            <!-- Mechanical Design -->
+            <div style="margin-bottom: 50px;">
+                <h3 class="component-heading">Mechanical Design</h3>
+                <img src="assets/images/CycloidalCAD.png" alt="Cycloidal gearbox CAD" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
+                <p class="component-text">The gearbox was modelled in OnShape. The cycloidal disc profile was generated parametrically from the pin circle radius, pin radius, and eccentricity, ensuring the disc geometry rolls cleanly against the pin ring without interference or excessive clearance. All major components were designed to be printed on a standard FDM printer in PLA without supports where possible.</p>
+
+                <div class="callout">
+                    <strong>Key components</strong>
+                    The assembly consists of a housing with press-fit outer pins, an eccentric input shaft that mounts directly onto the stepper motor shaft, a cycloidal disc with output pin holes, an output carrier with output pins, and a pair of output shaft bearings. The eccentric bearing sits between the input shaft and the disc and is the single most tolerance-sensitive part of the assembly.
+                </div>
+
+                <p class="component-text">Tolerances throughout the design were kept deliberately loose on the first print to allow for manual fit testing and iterative tightening. Clearance between the cycloidal disc and the outer pins was the primary tuning parameter: too tight and the drive binds, too loose and backlash increases. Several disc iterations were printed before a satisfactory running fit was achieved.</p>
+            </div>
+
+            <!-- Efficiency -->
+            <div style="margin-bottom: 50px;">
+                <h3 class="component-heading">Efficiency and Testing</h3>
+                <img src="assets/images/CycloidalTest.png" alt="Gearbox efficiency testing" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
+                <p class="component-text">Efficiency was measured by comparing the theoretical output torque, calculated from the input torque multiplied by the reduction ratio, against the actual torque delivered at the output shaft under a known load. The measured efficiency of seventy-two percent accounts for friction losses at the eccentric bearing, between the cycloidal disc and outer pins, and at the output pin holes.</p>
+
+                <div class="callout">
+                    <strong>Sources of loss</strong>
+                    The dominant loss in a printed cycloidal drive is sliding friction at the outer pin contacts. Unlike a precision metal drive where the pins can roll freely, printed pins and housings have higher surface roughness and are not perfectly circular, increasing sliding resistance. Grease applied to the pin contacts and eccentric bearing improved efficiency noticeably during testing, and the final measurement reflects the lubricated condition.
+                </div>
+
+                <p class="component-text">Despite the losses, a seventy-two percent efficiency at this reduction ratio is a practical result for a fully printed mechanism. The stepper motor's usable holding torque at the output is increased substantially, which was the primary goal of the project.</p>
+            </div>
+
         </section>
 
         <!-- Reflection -->
         <section id="process">
             <div class="section-rule"><h2 class="block_title">Reflection</h2></div>
-            
+
             <div class="step">
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>What Went Well</h4>
-                    <p>EDIT: Talk about the parts of the project you're proud of, what worked better than expected, or any breakthroughs you had.</p>
+                    <p>The parametric disc profile worked correctly on the first generation, requiring no corrections to the underlying geometry. Assembly was straightforward once tolerances were dialled in, and the gearbox ran smoothly with minimal binding. The final measured efficiency exceeded initial expectations for a fully printed mechanism, validating the design approach and the decision to use lubrication at the contact surfaces.</p>
                 </div>
             </div>
-        
+
             <div class="step" style="margin-top: 30px;">
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>Challenges</h4>
-                    <p>EDIT: Describe the biggest obstacles you ran into and how you dealt with them.</p>
+                    <p>Getting the clearance between the cycloidal disc and the outer pin ring right took the most iteration. FDM printing introduces dimensional variance that is difficult to predict analytically, so several disc versions had to be printed and tested by hand before a reliable running fit was found. The eccentric bearing was also challenging: at this scale, even small amounts of slop in the bearing seat caused audible wobble and increased vibration at higher input speeds.</p>
                 </div>
             </div>
-        
+
             <div class="step" style="margin-top: 30px;">
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>What I Would Do Differently</h4>
-                    <p>EDIT: If you were starting over, what would you change? Better tools, different approach, more testing, etc.</p>
+                    <p>I would replace the printed outer pins with metal dowel pins pressed into the housing. Metal pins are far more cylindrical and have lower surface roughness than printed ones, which would reduce sliding friction and improve efficiency noticeably. I would also add a second cycloidal disc offset by half a pitch to balance the eccentric load and reduce vibration, which is a common technique in commercial cycloidal drives. Finally, designing the housing to accept standard sealed bearings at every rotating interface from the start would eliminate the need for manual tolerance tuning between prints.</p>
                 </div>
             </div>
-        
-        </section>
 
-        <!-- Gallery -->
-        <section id="gallery">
-            <div class="section-rule"><h2 class="block_title">Gallery</h2></div>
-            <div class="gallery-grid">
-                <!-- EDIT: replace src with your actual project images -->
-                <img src="assets/images/Drone.jpg"   alt="Drone overview">
-                <img src="assets/images/Drone.jpg"   alt="Gripper detail">
-                <img src="assets/images/Drone.jpg"   alt="Electronics">
-                <img src="assets/images/Drone.jpg"   alt="Field test">
-            </div>
         </section>
 
         <!-- CTA -->
@@ -436,7 +478,7 @@
     </div><!-- /content -->
 
     <footer>
-        &copy; 2024 Dominic Nguyen
+        &copy; 2026 Dominic Nguyen
     </footer>
 
 </body>
