@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-    <title>Grass — Wheeled Bipedal Robot · Dominic Nguyen</title>
+    <title>Grass: Wheeled Bipedal Robot · Dominic Nguyen</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -415,7 +415,7 @@
     <!-- Hero Image -->
     <div style="background: var(--dark); padding-bottom: 60px;">
         <div class="hero-image-wrap">
-            <img src="assets/images/Biped.png" alt="Grass — Wheeled Bipedal Robot">
+            <img src="assets/images/Biped.png" alt="Grass: Wheeled Bipedal Robot">
         </div>
     </div>
 
@@ -429,11 +429,10 @@
                 <div class="overview-text">
                     <p>Grass is a bipedal (two-legged), two-wheeled self-balancing robot with wireless user control that integrates mechanical, electrical, and software design into a single dynamic platform.</p>
                     <p>The system functions as an inverted pendulum on a cart, maintaining upright stability by actively driving two DC gearmotors mounted at the base of its legs. Because the system is inherently unstable, continuous feedback control is required to prevent tipping and to enable controlled motion.</p>
-                    <p>Balance and motion are achieved using a dual cascaded PID control system — an inner loop that regulates tilt angle and an outer loop that manages translational velocity by generating a tilt setpoint. A custom C# WinForms interface communicates wirelessly via Bluetooth Low Energy for real-time command input and PID tuning.</p>
+                    <p>Balance and motion are achieved using a dual cascaded PID control system: an inner loop that regulates tilt angle and an outer loop that manages translational velocity by generating a tilt setpoint. A custom C# WinForms interface communicates wirelessly via Bluetooth Low Energy for real-time command input and PID tuning.</p>
                 </div>
                 <ul class="meta-list">
                     <li><span class="label">Year</span>       <span class="value">2026</span></li>
-                    <li><span class="label">Course</span>     <span class="value">MECH 421/423</span></li>
                     <li><span class="label">Duration</span>   <span class="value">3 months</span></li>
                     <li><span class="label">My Role</span>    <span class="value">Firmware & Electrical Lead</span></li>
                     <li><span class="label">Team</span>       <span class="value">Dominic Nguyen, Nicholas Yap</span></li>
@@ -465,7 +464,7 @@
             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
                 <iframe
                     src="https://www.youtube.com/embed/TUqeZ6tmTUU"
-                    title="Grass — Wheeled Bipedal Robot"
+                    title="Grass: Wheeled Bipedal Robot"
                     frameborder="0"
                     allowfullscreen
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 1px solid var(--border);">
@@ -482,11 +481,11 @@
                 <h3 class="component-heading">Mechanical Design</h3>
                 <img src="assets/images/GrassExplosion.jpg" alt="Grass exploded view" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
                 <p class="component-text">Grass was designed to be printed almost entirely out of PLA with the exception of the tires and the front and back bumpers, keeping costs and print time low. Because the robot would frequently fall during balance testing, the bumpers and battery tabs were printed in TPU for shock absorption and to protect the electronics hidden inside the chassis.</p>
-                <p class="component-text" style="margin-top: 12px;">The chassis is split into nine main components and designed around safety, easy access, proper ventilation, and modularity. Since the chassis acts as the point mass of the inverted pendulum, significant care was taken to keep the centre of mass high — at 20 cm above the wheels — while balancing weight evenly front-to-back. This height was selected based on idealised inverted-pendulum calculations and the stall torque of the chosen motors. To keep the system lean, the legs feature weight-saving cut-outs and internal channels to route motor and encoder wires cleanly into the chassis.</p>
+                <p class="component-text" style="margin-top: 12px;">The chassis is split into several main components and designed around safety, easy access, proper ventilation, and modularity. Since the chassis acts as the point mass of the inverted pendulum, significant care was taken to keep the centre of mass high while balancing weight evenly front-to-back. The target height was selected based on inverted-pendulum calculations and the stall torque of the chosen motors. To keep the system lean, the legs feature weight-saving cut-outs and internal channels to route motor and encoder wires cleanly into the chassis.</p>
 
                 <div class="callout">
                     <strong>Key design decisions</strong>
-                    Power and signal wires are separated on opposite sides of the chassis to reduce electromagnetic crosstalk. Metal flange connectors replaced plastic shaft collars after repeated stripping under high torque. The final wheel diameter of 10.5 cm balanced backlash reduction against sufficient top speed.
+                    Power and signal wires are separated on opposite sides of the chassis to reduce electromagnetic crosstalk. Metal flange connectors replaced plastic shaft collars after repeated stripping under high torque. A medium wheel diameter was chosen after testing multiple sizes, striking a balance between reducing backlash and maintaining enough top speed to recover from disturbances.
                 </div>
             </div>
 
@@ -494,7 +493,7 @@
             <div style="margin-bottom: 50px;">
                 <h3 class="component-heading">Components & Circuit</h3>
                 <img src="assets/images/GrassCircuit.jpg" alt="Grass circuit" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
-                <p class="component-text">The electronics were selected by first calculating the maximum torque needed at a 30° tilt, then working outward from the motor spec to choose every other part. Budget was a hard constraint — the target was under $200 for all components.</p>
+                <p class="component-text">The electronics were selected by first calculating the maximum torque needed at a significant tilt angle, then working outward from the motor spec to choose every other part. Budget was a hard constraint, with a target of under two hundred dollars for all components.</p>
 
                 <table class="spec-table">
                     <thead>
@@ -508,37 +507,37 @@
                         <tr>
                             <td>MCU</td>
                             <td>ESP32 WROOM</td>
-                            <td>240 MHz dual-core, onboard Wi-Fi & BLE, many GPIO</td>
+                            <td>Dual-core processor, onboard Wi-Fi and BLE, many GPIO pins</td>
                         </tr>
                         <tr>
-                            <td>Motors & Encoders</td>
-                            <td>2× FIT0493 DC Gearmotor</td>
-                            <td>12 V, 350 RPM, 12 kg·cm stall torque, 374 PPR quadrature encoder</td>
+                            <td>Motors and Encoders</td>
+                            <td>FIT0493 DC Gearmotor (x2)</td>
+                            <td>Rated at twelve volts with high stall torque and a high-resolution quadrature encoder</td>
                         </tr>
                         <tr>
                             <td>Motor Controller</td>
                             <td>DFR0601 Dual Channel</td>
-                            <td>12 A rating, 12 V input, dual channel</td>
+                            <td>High current rating, dual channel, twelve volt input</td>
                         </tr>
                         <tr>
                             <td>IMU</td>
                             <td>MPU-6500</td>
-                            <td>Accelerometer + gyroscope, onboard LPF, SPI interface</td>
+                            <td>Accelerometer and gyroscope with onboard low-pass filter, SPI interface</td>
                         </tr>
                         <tr>
                             <td>Battery</td>
-                            <td>3S 11.1 V LiPo — 5200 mAh</td>
-                            <td>~12 V output, &gt;12 A, &gt;20 min runtime</td>
+                            <td>3S LiPo, 5200 mAh</td>
+                            <td>Approximately twelve volt output, over twenty minutes of runtime</td>
                         </tr>
                         <tr>
                             <td>Buck Converter</td>
                             <td>LM2596</td>
-                            <td>3 A rated, steps 12 V down to 5 V for logic</td>
+                            <td>Steps the battery voltage down to five volts for logic components</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <p class="component-text" style="margin-top: 16px;">An emergency on/off switch is directly wired between the battery and all electronics and is accessible on the side of the chassis for a fast, hardware-level disconnect. Hexagonal ventilation holes on the chassis allow airflow and visual monitoring of components without removing covers.</p>
+                <p class="component-text" style="margin-top: 16px;">An emergency on/off switch is directly wired between the battery and all electronics and is accessible on the side of the chassis for a fast hardware-level disconnect. Hexagonal ventilation holes on the chassis allow airflow and visual monitoring of components without removing covers.</p>
             </div>
 
             <!-- Control Theory -->
@@ -548,16 +547,16 @@
                 <p class="component-text">The robot is modelled as a wheeled inverted pendulum. Two cascaded PID controllers form the core of the balance and motion system:</p>
 
                 <div class="callout" style="margin-top: 16px;">
-                    <strong>Inner loop — Balancing PID</strong>
-                    Takes the current tilt angle from the IMU and a tilt setpoint from the outer loop. Outputs a desired motor current (saturated at ±4 A). The duty cycle is then calculated from the motor armature equation, accounting for back-EMF, rather than simple open-loop voltage control. Runs at 500 Hz on Core 1 of the ESP32.
+                    <strong>Inner loop: Balancing PID</strong>
+                    Takes the current tilt angle from the IMU and a tilt setpoint from the outer loop. Outputs a desired motor current, capped at a safe maximum. The duty cycle is then calculated from the motor armature equation, accounting for back-EMF, rather than relying on simple open-loop voltage control. This loop runs on a dedicated core of the ESP32 at a high fixed frequency.
                 </div>
 
                 <div class="callout">
-                    <strong>Outer loop — Velocity PID</strong>
-                    Takes a user-commanded velocity setpoint and the current wheel velocity from the encoder. Outputs a tilt angle setpoint for the inner loop. Setting the velocity setpoint to zero makes Grass stand still; non-zero values cause controlled forward or backward motion. Limiting the maximum duty cycle to 128/255 (≈50%) was critical — uncapped PWM caused repeated motor overheating during early testing.
+                    <strong>Outer loop: Velocity PID</strong>
+                    Takes a user-commanded velocity setpoint and the current wheel velocity from the encoder. Outputs a tilt angle setpoint for the inner loop. Setting the velocity setpoint to zero makes Grass stand still; non-zero values cause controlled forward or backward motion. Capping the maximum duty cycle was critical, as uncapped PWM caused repeated motor overheating during early testing.
                 </div>
 
-                <p class="component-text">The system was first tuned manually, then a full Simulink model of the inverted pendulum was built to estimate initial PID gains and loop speeds before final hardware tuning. The tilt estimation loop runs at 1 kHz (double the PID rate) to ensure sensor data is never stale when the control loop fires.</p>
+                <p class="component-text">The system was first tuned manually, then a full Simulink model of the inverted pendulum was built to estimate initial PID gains and loop speeds before final hardware tuning. The tilt estimation loop runs at double the PID rate to ensure sensor data is never stale when the control loop fires.</p>
             </div>
 
             <!-- Firmware -->
@@ -566,23 +565,23 @@
                 <p class="component-text">The firmware runs on the dual-core ESP32 using FreeRTOS. The two cores are deliberately isolated to prevent timing interference:</p>
 
                 <div class="callout">
-                    <strong>Core 0 — Sensor & Communication</strong>
-                    An IMU task reads raw accelerometer and gyroscope data over SPI at 1 kHz, applies scaling factors from the datasheet, and feeds the values into a Madgwick AHRS filter to produce a clean tilt angle estimate. A Bluetooth Low Energy server task handles all incoming command packets from the C# UI, parsing serial byte packets (e.g. <code style="font-family: monospace; font-size: 0.9em;">255 Kp Ki Kd</code>) through a state machine to update PID coefficients, velocity setpoints, or trigger an e-stop.
+                    <strong>Core 0: Sensor and Communication</strong>
+                    An IMU task reads raw accelerometer and gyroscope data over SPI at a high fixed rate, applies scaling factors from the datasheet, and feeds the values into a Madgwick AHRS filter to produce a clean tilt angle estimate. A BLE server task handles all incoming command packets from the C# UI, parsing serial byte packets through a state machine to update PID coefficients, velocity setpoints, or trigger an e-stop.
                 </div>
 
                 <div class="callout">
-                    <strong>Core 1 — PID & Motor Control</strong>
-                    A hardware timer fires at 500 Hz via interrupt, releasing a semaphore that wakes the PID task. The task reads encoder counts, computes wheel velocity through a double complementary filter (α = 0.2) to suppress noise spikes, then runs both PID loops using the FastPID integer-math library to minimise per-iteration delay. Motor direction and PWM are written to the DFR0601 controller, with a hard cutoff if tilt exceeds 25° to protect hardware on a fall.
+                    <strong>Core 1: PID and Motor Control</strong>
+                    A hardware timer fires via interrupt at a fixed rate, releasing a semaphore that wakes the PID task. The task reads encoder counts, computes wheel velocity through a double complementary filter to suppress noise spikes, then runs both PID loops using the FastPID integer-math library to minimise per-iteration delay. Motor direction and PWM are written to the motor controller, with a hard cutoff if tilt exceeds a safe threshold to protect hardware on a fall.
                 </div>
 
-                <p class="component-text">The IMU was initially connected over I²C, but motor noise caused repeated desyncing and sudden data shutdowns. Switching to SPI (more noise-resistant) resolved both issues immediately. The Madgwick filter beta value was tuned to 0.02 (low accelerometer weight) and the onboard LPF cut-off set to 98 Hz, providing a smooth, low-latency tilt estimate that tracks slow tilts without reacting to vibration spikes.</p>
+                <p class="component-text">The IMU was initially connected over I2C, but motor noise caused repeated desyncing and sudden data shutdowns. Switching to SPI resolved both issues immediately. The Madgwick filter beta value was tuned to a low accelerometer weight and the onboard low-pass filter set to a cutoff around a hundred hertz, providing a smooth, low-latency tilt estimate that tracks slow tilts without reacting to vibration spikes.</p>
             </div>
 
             <!-- Wireless UI -->
             <div style="margin-bottom: 50px;">
                 <h3 class="component-heading">Wireless User Interface</h3>
-                <p class="component-text">A custom C# WinForms application on a Windows PC acts as the BLE client. It scans for nearby BLE devices, pairs to the ESP32 ("Grass"), and presents a virtual controller with directional buttons, a variable-speed slider (−10 to +10 RPM), real-time PID tuning fields, a tilt-offset adjust, a sync button, and a large red E-Stop.</p>
-                <p class="component-text" style="margin-top: 12px;">Commands are serialised as plain UTF-8 strings with a leading command byte (e.g. <code style="font-family: monospace; font-size: 0.9em;">251 5 0</code> for slow forward, <code style="font-family: monospace; font-size: 0.9em;">123 234 69</code> for e-stop). BLE range exceeded the full length of the instrumentation lab with no measurable latency. Attempting to add a live telemetry chart overwhelmed the BLE stack and caused dangerous command lag, so it was removed in favour of stability.</p>
+                <p class="component-text">A custom C# WinForms application on a Windows PC acts as the BLE client. It scans for nearby BLE devices, pairs to the ESP32, and presents a virtual controller with directional buttons, a variable-speed slider, real-time PID tuning fields, a tilt-offset adjust, a sync button, and a large red E-Stop.</p>
+                <p class="component-text" style="margin-top: 12px;">Commands are sent as plain UTF-8 strings with a leading command byte that tells the ESP32 what to do with the values that follow. BLE range exceeded the full length of the instrumentation lab with no measurable latency. Attempting to add a live telemetry chart overwhelmed the BLE stack and caused dangerous command lag, so it was removed in favour of stability.</p>
             </div>
 
         </section>
@@ -595,7 +594,7 @@
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>What Went Well</h4>
-                    <p>The electronics and circuit design worked on the first try with no major iterations. Every component chosen met its rated specification. The mechanical chassis went through just one significant revision, and the BLE range far exceeded expectations — Grass maintained a stable connection from one end of the instrumentation lab to the other. Most importantly, the robot achieved all of its primary goals: self-balancing for over five minutes, forward and backward movement, impulse recovery, and wireless control.</p>
+                    <p>The electronics and circuit design worked on the first try with no major iterations. Every component chosen met its rated specification. The mechanical chassis went through just one significant revision, and the BLE range far exceeded expectations, with Grass maintaining a stable connection from one end of the instrumentation lab to the other. Most importantly, the robot achieved all of its primary goals: self-balancing for over five minutes, forward and backward movement, impulse recovery, and wireless control.</p>
                 </div>
             </div>
 
@@ -603,7 +602,7 @@
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>Challenges</h4>
-                    <p>The motors were the largest source of problems. Two motors failed during testing — one overheated due to repeated high-speed direction reversals, and another had a brush burn out — causing significant delays waiting for replacements. Brushed DC gearmotors also introduced persistent backlash that the controller could not fully compensate for, resulting in small oscillations around the balance point. On the firmware side, I²C noise corruption from the motors required a full switch to SPI, and getting multiprocessing right on the ESP32 — separating time-critical PID execution from sensing and BLE without priority inversions — took considerable experimentation. Trying to tune the PIDs by hand without a simulation cost several days of wasted effort before we built a Simulink model.</p>
+                    <p>The motors were the largest source of problems. Two motors failed during testing: one overheated due to repeated high-speed direction reversals, and another had a brush burn out, causing significant delays waiting for replacements. Brushed DC gearmotors also introduced persistent backlash that the controller could not fully compensate for, resulting in small oscillations around the balance point. On the firmware side, I2C noise corruption from the motors required a full switch to SPI, and getting multiprocessing right on the ESP32, separating time-critical PID execution from sensing and BLE without priority inversions, took considerable experimentation. Trying to tune the PIDs by hand without a simulation cost several days of wasted effort before we built a Simulink model.</p>
                 </div>
             </div>
 
@@ -611,7 +610,7 @@
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>What I Would Do Differently</h4>
-                    <p>Switch to brushless DC motors from the start. BLDC motors eliminate brush wear, reduce backlash, and provide more symmetric response between the two wheels. I would also start with a Simulink model before touching hardware for any future control-theory project — the simulation that saved us in the final week should have been the first step. On the firmware side, a more powerful MCU with additional cores would allow wireless data streaming without sacrificing control loop speed, removing the need for serial print workarounds during tuning. Finally, I'd design a PCB rather than using off-the-shelf modules to clean up wiring and reduce the chassis size.</p>
+                    <p>I would switch to higher rated and higher quality DC motors from the start. Using higher rated motors reduces the likelihood of brush burnout while higher quality motors reduce backlash and provide more symmetric response between the two wheels. I would also start with a Simulink model before touching hardware for any future control-theory project, as the simulation that saved us in the final week should have been the first step. On the firmware side, a more powerful MCU with additional cores would allow wireless data streaming without sacrificing control loop speed, removing the need for serial print workarounds during tuning. Finally, designing a PCB rather than using off-the-shelf modules would clean up wiring and reduce the overall chassis size.</p>
                 </div>
             </div>
 
