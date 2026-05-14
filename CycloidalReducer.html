@@ -349,14 +349,14 @@
     <!-- Hero -->
     <section id="hero">
         <p class="project-category">Dominic Nguyen</p>
-        <h1>Cycloidal Gearbox</h1>
+        <h1>Cycloidal Reducer</h1>
         <p class="hero-byline">Mechanical Design &nbsp;·&nbsp; CAD &nbsp;·&nbsp; 3D Printing</p>
     </section>
 
     <!-- Hero Image -->
     <div style="background: var(--dark); padding-bottom: 60px;">
         <div class="hero-image-wrap">
-            <img src="assets/images/CycloidalGearbox.jpg" alt="25 to 1 Cycloidal Gearbox">
+            <img src="assets/images/CycloidalReducer.jpg" alt="25 to 1 Cycloidal Gearbox">
         </div>
     </div>
 
@@ -369,12 +369,12 @@
             <div class="overview-grid">
                 <div class="overview-text">
                     <p>This project is a compact cycloidal gearbox designed to significantly increase the output torque of a NEMA 23 stepper motor. A cycloidal drive achieves speed reduction through the eccentric rolling motion of cycloidal discs against a ring of pins, allowing for a high reduction ratio in a very small package.</p>
-                    <p>The gearbox was designed, modelled, and printed entirely in-house. The drive runs at a reduction ratio of twenty-five to one and uses a dual disc arrangement offset by half a pitch to balance eccentric loads and reduce vibration. Nylon spacers are used at all contact points to reduce friction, with PLA pins inside the outer nylon spacers and M3 bolts carrying the inner nylon spacers. Efficiency testing against the NEMA 23's stall torque yielded a measured output of seventy-two percent.</p>
+                    <p>The gearbox was designed, modelled, and printed entirely in-house. The drive runs at a reduction ratio of twenty-five to one and uses a dual disc arrangement offset by half a pitch to balance eccentric loads and reduce vibration. Nylon spacers are used at all contact points to reduce friction, with PLA pins inside the outer nylon spacers and M3 bolts carrying the inner nylon spacers. Efficiency testing against the NEMA 23's stall torque yielded a measured output of 72%.</p>
                     <p>The project served as a deep dive into the geometry of cycloidal mechanisms, the tolerances involved in 3D printed drivetrains, and the practical tradeoffs between gear ratio, efficiency, and backlash in compact actuator design.</p>
                 </div>
                 <ul class="meta-list">
-                    <li><span class="label">Year</span>           <span class="value">2026</span></li>
-                    <li><span class="label">My Role</span>        <span class="value">Sole Designer</span></li>
+                    <li><span class="label">Year</span>           <span class="value">2025</span></li>
+                    <li><span class="label">Duration</span>        <span class="value">2 months</span></li>
                     <li><span class="label">Motor</span>          <span class="value">NEMA 23 Stepper</span></li>
                     <li><span class="label">Reduction Ratio</span><span class="value">25 : 1</span></li>
                     <li><span class="label">Measured Efficiency</span><span class="value">72%</span></li>
@@ -406,15 +406,15 @@
                 <h3 class="component-heading">How a Cycloidal Drive Works</h3>
                 <img src="assets/images/CycloidalSection.png" alt="Cycloidal gearbox cross section" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
                 <p class="component-text">A cycloidal drive reduces speed through the eccentric rolling motion of a cycloidal disc. An eccentric bearing on the input shaft causes the disc to wobble in a circular path. The outer edge of the disc is shaped as a curtate cycloid and rolls against a ring of fixed outer pins on the housing, causing the disc to rotate slowly in the opposite direction to the input. Output pins pass through holes in the disc and transfer this slow rotation to the output shaft, cancelling the wobble and producing smooth, concentric rotation.</p>
-                <p class="component-text" style="margin-top: 12px;">The reduction ratio is determined by the number of outer pins. With twenty-five pins, the disc completes one full rotation for every twenty-five rotations of the input. Because many pins are in contact with the disc simultaneously, the load is distributed across multiple contact points at once, making cycloidal drives highly compact and resistant to shock loading compared to spur or planetary gear arrangements.</p>
-                <p class="component-text" style="margin-top: 12px;">This design uses two cycloidal discs stacked and offset by half a pitch from each other. This balances the eccentric load on the input bearing, reduces vibration at speed, and smooths the output torque by ensuring continuous engagement between the discs and the pin ring throughout the full rotation cycle.</p>
+                <p class="component-text" style="margin-top: 12px;">The reduction ratio is determined by the number of outer pins. With 26 pins, the disc completes one full rotation for every twenty-five rotations of the input. Because many pins are in contact with the disc simultaneously, the load is distributed across multiple contact points at once, making cycloidal drives highly compact, backdriveable, and immune to backlash.</p>
+                <p class="component-text" style="margin-top: 12px;">This design uses two cycloidal discs stacked and offset by half a pitch from each other. This balances the eccentric load on the input bearing, reduces vibration at high speed, and smooths the output torque by ensuring continuous engagement between the discs and the pin ring throughout the full rotation cycle.</p>
             </div>
 
             <!-- Mechanical Design -->
             <div style="margin-bottom: 50px;">
                 <h3 class="component-heading">Mechanical Design</h3>
                 <img src="assets/images/CycloidalCAD.png" alt="Cycloidal gearbox CAD" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
-                <p class="component-text">The gearbox was modelled in OnShape. The cycloidal disc profile was generated parametrically from the pin circle radius, pin radius, and eccentricity, ensuring the disc geometry rolls cleanly against the pin ring without interference or excessive clearance. All major components were designed to be printed on a standard FDM printer in PLA without supports where possible.</p>
+                <p class="component-text">The gearbox was modelled in SolidWorks. The cycloidal disc profile was generated parametrically from the pin circle radius, pin radius, and eccentricity, ensuring the disc geometry rolls cleanly against the pin ring without interference or excessive clearance. All major components were designed to be printed on a standard FDM printer in PLA without supports where possible.</p>
 
                 <div class="callout">
                     <strong>Key components</strong>
