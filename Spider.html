@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-    <title>Project Name — Dominic Nguyen</title>
+    <title>Spider Bot · Dominic Nguyen</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Match your existing portfolio fonts -->
     <link href='https://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
 
     <style>
-        /* ── Reset & Base ── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
@@ -33,7 +31,6 @@
             line-height: 1.7;
         }
 
-        /* ── Navigation (matches your main site) ── */
         #navigation {
             position: sticky;
             top: 0;
@@ -73,7 +70,6 @@
 
         .back-link:hover { color: var(--white); }
 
-        /* ── Hero ── */
         #hero {
             background: var(--dark);
             color: var(--white);
@@ -108,11 +104,10 @@
             letter-spacing: 0.05em;
         }
 
-        /* ── Hero Image ── */
         .hero-image-wrap {
-            max-width: 900px;
+            max-width: 600px;
             margin: 0 auto;
-            transform: translateY(40px);
+            transform: translateY(-50px);
         }
 
         .hero-image-wrap img {
@@ -122,14 +117,12 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.12);
         }
 
-        /* ── Content ── */
         #content {
             max-width: 900px;
             margin: 0 auto;
             padding: 80px 30px 60px;
         }
 
-        /* ── Section title (matches your "block_title") ── */
         .block_title {
             font-family: 'Dosis', sans-serif;
             font-weight: 200;
@@ -155,10 +148,7 @@
             background: var(--border);
         }
 
-        /* ── Overview ── */
-        #overview {
-            margin-bottom: 70px;
-        }
+        #overview { margin-bottom: 70px; }
 
         .overview-grid {
             display: grid;
@@ -202,10 +192,7 @@
             text-align: right;
         }
 
-        /* ── Details / Skills tags ── */
-        #details {
-            margin-bottom: 70px;
-        }
+        #details { margin-bottom: 70px; }
 
         .tags {
             display: flex;
@@ -225,17 +212,7 @@
             color: var(--dark);
         }
 
-        /* ── Steps / Process ── */
-        #process {
-            margin-bottom: 70px;
-        }
-
-        .steps {
-            counter-reset: step;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
+        #process { margin-bottom: 70px; }
 
         .step {
             display: grid;
@@ -245,7 +222,6 @@
         }
 
         .step-num {
-            counter-increment: step;
             font-family: 'Dosis', sans-serif;
             font-weight: 200;
             font-size: 2rem;
@@ -261,32 +237,8 @@
             letter-spacing: 0.04em;
         }
 
-        .step-body p {
-            font-size: 0.95rem;
-            color: #555;
-        }
+        .step-body p { font-size: 0.95rem; color: #555; }
 
-        /* ── Gallery ── */
-        #gallery {
-            margin-bottom: 70px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-
-        .gallery-grid img {
-            width: 100%;
-            display: block;
-            border: 1px solid var(--border);
-            transition: opacity 0.2s;
-        }
-
-        .gallery-grid img:hover { opacity: 0.85; }
-
-        /* ── Back to projects CTA ── */
         #cta {
             text-align: center;
             padding: 60px 30px;
@@ -307,12 +259,8 @@
             transition: background 0.2s, color 0.2s;
         }
 
-        .btn-outline:hover {
-            background: var(--dark);
-            color: var(--white);
-        }
+        .btn-outline:hover { background: var(--dark); color: var(--white); }
 
-        /* ── Footer ── */
         footer {
             background: var(--dark);
             color: var(--accent);
@@ -324,11 +272,57 @@
             text-transform: uppercase;
         }
 
-        /* ── Responsive ── */
+        .component-heading {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 300;
+            font-size: 1.3rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 14px;
+        }
+
+        .component-text {
+            font-size: 0.97rem;
+            color: #555;
+            line-height: 1.85;
+        }
+
+        .callout {
+            border-left: 3px solid var(--dark);
+            padding: 16px 20px;
+            background: var(--light);
+            margin: 24px 0;
+            font-size: 0.94rem;
+            color: #444;
+        }
+
+        .callout strong {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 6px;
+            color: var(--accent);
+        }
+
+        .two-col-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .two-col-images img {
+            width: 100%;
+            display: block;
+            border: 1px solid var(--border);
+        }
+
         @media (max-width: 680px) {
-            .overview-grid { grid-template-columns: 1fr; gap: 30px; }
-            .gallery-grid  { grid-template-columns: 1fr; }
-            .hero-image-wrap { transform: translateY(20px); }
+            .overview-grid      { grid-template-columns: 1fr; gap: 30px; }
+            .two-col-images     { grid-template-columns: 1fr; }
+            .hero-image-wrap    { transform: translateY(20px); }
         }
     </style>
 </head>
@@ -344,15 +338,15 @@
 
     <!-- Hero -->
     <section id="hero">
-        <p class="project-category">Dominic Nguyen</p>  <!-- EDIT: category / team -->
-        <h1>4-Legged Spider Robot</h1>              <!-- EDIT: project title -->
-        <p class="hero-byline">Mechanical Design &nbsp;·&nbsp; Electrical &nbsp;·&nbsp; Firmware</p> <!-- EDIT: disciplines -->
+        <p class="project-category">Dominic Nguyen</p>
+        <h1>4-Legged Spider Bot</h1>
+        <p class="hero-byline">Mechanical Design &nbsp;·&nbsp; Electrical &nbsp;·&nbsp; Firmware</p>
     </section>
 
     <!-- Hero Image -->
     <div style="background: var(--dark); padding-bottom: 60px;">
         <div class="hero-image-wrap">
-            <img src="assets/images/Spider.jpg" alt="Trash Retrieval Drone">  <!-- EDIT: image path -->
+            <img src="assets/images/SpiderBot.jpg" alt="2DOF 4-Legged Spider Bot">
         </div>
     </div>
 
@@ -364,14 +358,16 @@
             <div class="section-rule"><h2 class="block_title">Overview</h2></div>
             <div class="overview-grid">
                 <div class="overview-text">
-                    <!-- EDIT: replace with your project description -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. This project involved designing and building an autonomous drone capable of detecting and retrieving trash in outdoor environments.</p>
-                    <p>The system integrates computer vision, a custom mechanical gripper, and real-time flight control to autonomously locate, pick up, and deposit waste items.</p>
+                    <p>The Spider Bot is a four-legged walking robot built to develop practical experience with electronic component selection, communication protocols, and servo-driven mechanical design. Each leg has two degrees of freedom driven by a hobby servo, giving the robot eight servos in total across all four legs.</p>
+                    <p>The robot is built around an ESP32 microcontroller communicating with a sixteen-channel PWM driver over I2C, which handles all servo signals from a single chip. Power comes from a two-cell lithium polymer battery, with a dedicated power stage to supply the current demands of running all eight servos simultaneously.</p>
+                    <p>The mechanical structure is fully 3D printed and was designed in SolidWorks. A small OLED display mounted on the chassis gives the robot a face, lending it the companion-robot character that motivated the project.</p>
                 </div>
                 <ul class="meta-list">
-                    <li><span class="label">Year</span>       <span class="value">2025</span></li>          <!-- EDIT -->
-                    <li><span class="label">Duration</span>   <span class="value">2 months</span></li>      <!-- EDIT -->
-                    <li><span class="label">Status</span>     <span class="value">Completed</span></li>     <!-- EDIT -->
+                    <li><span class="label">Year</span>        <span class="value">2025</span></li>
+                    <li><span class="label">Duration</span>     <span class="value">2 months</span></li>
+                    <li><span class="label">Servos</span>      <span class="value">8 SG90</span></li>
+                    <li><span class="label">MCU</span>         <span class="value">ESP32</span></li>
+                    <li><span class="label">Status</span>      <span class="value">Completed</span></li>
                 </ul>
             </div>
         </section>
@@ -380,54 +376,95 @@
         <section id="details">
             <div class="section-rule"><h2 class="block_title">Skills Used</h2></div>
             <div class="tags">
-                <!-- EDIT: add/remove tags to match your project -->
                 <span class="tag">CAD / SolidWorks</span>
-                <span class="tag">3D Printing</span>
-                <span class="tag">Circuit Design</span>
-                <span class="tag">Bluetooth Control</span>
+                <span class="tag">3D Printing (PLA)</span>
+                <span class="tag">Servo Control</span>
+                <span class="tag">I2C Communication</span>
+                <span class="tag">Circuit Design (KiCad)</span>
+                <span class="tag">ESP32 Firmware</span>
+                <span class="tag">Dabble Bluetooth Control</span>
+                <span class="tag">Component Selection</span>
             </div>
+        </section>
+
+        <!-- Details -->
+        <section id="components" style="margin-bottom: 70px;">
+            <div class="section-rule"><h2 class="block_title">Details</h2></div>
+
+            <!-- Mechanical -->
+            <div style="margin-bottom: 50px;">
+                <h3 class="component-heading">Mechanical Design</h3>
+                <div class="two-col-images">
+                    <img src="assets/images/SpiderBotCAD.jpg" alt="Spider Bot CAD render">
+                    <img src="assets/images/SpiderBotReal.jpg" alt="Spider Bot physical build">
+                </div>
+                <p class="component-text">The chassis and all leg components were designed in SolidWorks and printed in PLA. The four legs attach symmetrically to the corners of a central body plate that houses the electronics. Each leg consists of a hip segment driven by the first servo and a lower limb driven by the second, giving each leg its two degrees of freedom.</p>
+                <p class="component-text" style="margin-top: 12px;">The leg geometry was kept simple to make gait programming more tractable on a first build. Hot glue tips at the end of each foot improve grip on flat surfaces. All servo mounts use a slotted design so that horn alignment can be adjusted without reprinting parts.</p>
+
+                <div class="callout">
+                    <strong>Design note</strong>
+                    Two degrees of freedom per leg was sufficient to achieve a basic alternating step pattern, but it proved to be a hard limit for smooth movement. With only hip and knee joints, each leg tip traces a simple arc rather than a straight line, causing the body to wobble with each step. A third degree of freedom at the hip would substantially improve the stepping quality in a future revision.
+                </div>
+            </div>
+
+            <!-- Electronics -->
+            <div style="margin-bottom: 50px;">
+                <h3 class="component-heading">Electronics and Circuit</h3>
+                <img src="assets/images/SpiderBotSchematic.jpg" alt="Spider Bot schematic" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
+                <p class="component-text">The circuit was designed in KiCad and centres on three main components working together: the ESP32 as the brain, a PCA9685 sixteen-channel PWM driver handling all servo signals over I2C, and a 7.4V lithium ion battery as the power source.</p>
+
+                <div class="callout">
+                    <strong>Component breakdown</strong>
+                    The ESP32 sends position commands to the PCA9685 over I2C, and the driver generates the corresponding PWM signals for each of the eight servos independently. A buck converter steps the battery voltage down for the logic components, while the servos draw directly from the battery through a shared power rail. An OLED display connects to the ESP32 over a second I2C bus and renders a simple face graphic on the front of the chassis.
+                </div>
+
+                <p class="component-text">The biggest electrical challenge was current. Eight hobby servos drawing stall current simultaneously can pull far more than a small battery or microcontroller pin can safely supply. Routing all servo power through a dedicated rail from the battery, separate from the logic supply, kept the ESP32 and PCA9685 isolated from the servo current spikes. Managing wire tension from the body to the moving leg joints also required careful routing to prevent wires from binding or pulling at the connectors during movement.</p>
+            </div>
+
+            <!-- Firmware -->
+            <div style="margin-bottom: 50px;">
+                <h3 class="component-heading">Firmware</h3>
+                <p class="component-text">The firmware runs on the ESP32 using the Arduino framework. Each servo position is set by writing a target angle to the PCA9685 over I2C, which the driver converts into the appropriate pulse width for that channel. Servo positions for each leg are stored as angle pairs and interpolated smoothly to avoid sharp current spikes from sudden position jumps.</p>
+                <p class="component-text" style="margin-top: 12px;">The walking gait uses a simple alternating pattern where two diagonally opposite legs swing forward while the other two push against the ground. This keeps the robot stable with at least two legs on the ground at any point in the cycle. Gait timing is handled by a software timer loop on the ESP32, with each phase held for a fixed duration tuned manually to achieve stable forward movement.</p>
+
+                <p class="component-text">Control is handled wirelessly through the Dabble app, which communicates with the ESP32 over Bluetooth. Dabble provides a virtual gamepad interface on a smartphone that maps directly to movement commands on the robot, allowing forward, backward, and turning inputs without any custom UI development. The ESP32 receives these commands and translates them into the appropriate gait phase for the servos.</p>
+
+                <div class="callout">
+                    <strong>Wire tension</strong>
+                    A recurring issue during testing was wire tension at the hip joints. As each leg swept through its full range of motion, the servo wires running from the body to the lower joints would pull taut and eventually snap under the repeated stress. This required resoldering connections mid-testing and highlighted the need to design dedicated wire routing and strain relief directly into the printed parts from the start, rather than managing cable runs as an afterthought.
+                </div>
+            </div>
+
         </section>
 
         <!-- Reflection -->
         <section id="process">
             <div class="section-rule"><h2 class="block_title">Reflection</h2></div>
-            
+
             <div class="step">
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>What Went Well</h4>
-                    <p>EDIT: Talk about the parts of the project you're proud of, what worked better than expected, or any breakthroughs you had.</p>
+                    <p>The I2C communication between the ESP32 and PCA9685 worked reliably from the first test, and the PWM driver made managing eight servos from a single microcontroller straightforward. The mechanical design printed cleanly and assembled without major fitting issues. The project succeeded in its primary goal of building practical experience with electronic component selection, communication protocols, and servo-driven systems, all skills that directly informed later projects.</p>
                 </div>
             </div>
-        
+
             <div class="step" style="margin-top: 30px;">
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>Challenges</h4>
-                    <p>EDIT: Describe the biggest obstacles you ran into and how you dealt with them.</p>
+                    <p>Drawing enough current for all eight servos was the most persistent problem. Even with a dedicated servo power rail, stall events during steps caused voltage sags that occasionally reset the ESP32. Wire tension at the hip joints was a more damaging issue as repeated leg movement would pull the servo wires until they snapped, requiring servo replacements or resoldering. Finally, the two degree of freedom leg arrangement was insufficient for smooth movement, and the body bobbed visibly with each step because the leg tips traced an arc rather than a straight-line path.</p>
                 </div>
             </div>
-        
+
             <div class="step" style="margin-top: 30px;">
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>What I Would Do Differently</h4>
-                    <p>EDIT: If you were starting over, what would you change? Better tools, different approach, more testing, etc.</p>
+                    <p>With my new knowledge of inverse kinematics, I would add a third degree of freedom at the hip to allow lateral leg swing and then use IK to properly calculate a linear foot path for each leg rather than relying on a simple fixed angle sequence. Commanding each foot to trace a straight line along the ground makes the body translate smoothly instead of bobbing, and IK makes that straightforward to compute regardless of how many joints are in the chain. For wiring, designing dedicated cable channels and strain relief features into the printed leg parts from revision one would prevent the snapping issue entirely. I would also add a current sensor on the servo power rail so the firmware can detect stall conditions and respond before a voltage sag resets the board.</p>
                 </div>
             </div>
-        
-        </section>
 
-        <!-- Gallery -->
-        <section id="gallery">
-            <div class="section-rule"><h2 class="block_title">Gallery</h2></div>
-            <div class="gallery-grid">
-                <!-- EDIT: replace src with your actual project images -->
-                <img src="assets/images/Drone.jpg"   alt="Drone overview">
-                <img src="assets/images/Drone.jpg"   alt="Gripper detail">
-                <img src="assets/images/Drone.jpg"   alt="Electronics">
-                <img src="assets/images/Drone.jpg"   alt="Field test">
-            </div>
         </section>
 
         <!-- CTA -->
@@ -438,7 +475,7 @@
     </div><!-- /content -->
 
     <footer>
-        &copy; 2024 Dominic Nguyen
+        &copy; 2026 Dominic Nguyen
     </footer>
 
 </body>
