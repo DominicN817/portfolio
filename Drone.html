@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-    <title>Project Name — Dominic Nguyen</title>
+    <title>Trash Retrieval Drone · Dominic Nguyen</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Match your existing portfolio fonts -->
     <link href='https://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
 
     <style>
-        /* ── Reset & Base ── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
@@ -33,7 +31,6 @@
             line-height: 1.7;
         }
 
-        /* ── Navigation (matches your main site) ── */
         #navigation {
             position: sticky;
             top: 0;
@@ -73,7 +70,6 @@
 
         .back-link:hover { color: var(--white); }
 
-        /* ── Hero ── */
         #hero {
             background: var(--dark);
             color: var(--white);
@@ -108,11 +104,10 @@
             letter-spacing: 0.05em;
         }
 
-        /* ── Hero Image ── */
         .hero-image-wrap {
-            max-width: 900px;
+            max-width: 600px;
             margin: 0 auto;
-            transform: translateY(40px);
+            transform: translateY(-50px);
         }
 
         .hero-image-wrap img {
@@ -122,14 +117,12 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.12);
         }
 
-        /* ── Content ── */
         #content {
             max-width: 900px;
             margin: 0 auto;
             padding: 80px 30px 60px;
         }
 
-        /* ── Section title (matches your "block_title") ── */
         .block_title {
             font-family: 'Dosis', sans-serif;
             font-weight: 200;
@@ -155,10 +148,7 @@
             background: var(--border);
         }
 
-        /* ── Overview ── */
-        #overview {
-            margin-bottom: 70px;
-        }
+        #overview { margin-bottom: 70px; }
 
         .overview-grid {
             display: grid;
@@ -202,10 +192,7 @@
             text-align: right;
         }
 
-        /* ── Details / Skills tags ── */
-        #details {
-            margin-bottom: 70px;
-        }
+        #details { margin-bottom: 70px; }
 
         .tags {
             display: flex;
@@ -225,17 +212,7 @@
             color: var(--dark);
         }
 
-        /* ── Steps / Process ── */
-        #process {
-            margin-bottom: 70px;
-        }
-
-        .steps {
-            counter-reset: step;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
+        #process { margin-bottom: 70px; }
 
         .step {
             display: grid;
@@ -245,7 +222,6 @@
         }
 
         .step-num {
-            counter-increment: step;
             font-family: 'Dosis', sans-serif;
             font-weight: 200;
             font-size: 2rem;
@@ -261,32 +237,8 @@
             letter-spacing: 0.04em;
         }
 
-        .step-body p {
-            font-size: 0.95rem;
-            color: #555;
-        }
+        .step-body p { font-size: 0.95rem; color: #555; }
 
-        /* ── Gallery ── */
-        #gallery {
-            margin-bottom: 70px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-
-        .gallery-grid img {
-            width: 100%;
-            display: block;
-            border: 1px solid var(--border);
-            transition: opacity 0.2s;
-        }
-
-        .gallery-grid img:hover { opacity: 0.85; }
-
-        /* ── Back to projects CTA ── */
         #cta {
             text-align: center;
             padding: 60px 30px;
@@ -307,12 +259,8 @@
             transition: background 0.2s, color 0.2s;
         }
 
-        .btn-outline:hover {
-            background: var(--dark);
-            color: var(--white);
-        }
+        .btn-outline:hover { background: var(--dark); color: var(--white); }
 
-        /* ── Footer ── */
         footer {
             background: var(--dark);
             color: var(--accent);
@@ -324,11 +272,57 @@
             text-transform: uppercase;
         }
 
-        /* ── Responsive ── */
+        .component-heading {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 300;
+            font-size: 1.3rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 14px;
+        }
+
+        .component-text {
+            font-size: 0.97rem;
+            color: #555;
+            line-height: 1.85;
+        }
+
+        .callout {
+            border-left: 3px solid var(--dark);
+            padding: 16px 20px;
+            background: var(--light);
+            margin: 24px 0;
+            font-size: 0.94rem;
+            color: #444;
+        }
+
+        .callout strong {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 6px;
+            color: var(--accent);
+        }
+
+        .two-col-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .two-col-images img {
+            width: 100%;
+            display: block;
+            border: 1px solid var(--border);
+        }
+
         @media (max-width: 680px) {
-            .overview-grid { grid-template-columns: 1fr; gap: 30px; }
-            .gallery-grid  { grid-template-columns: 1fr; }
-            .hero-image-wrap { transform: translateY(20px); }
+            .overview-grid      { grid-template-columns: 1fr; gap: 30px; }
+            .two-col-images     { grid-template-columns: 1fr; }
+            .hero-image-wrap    { transform: translateY(20px); }
         }
     </style>
 </head>
@@ -344,15 +338,15 @@
 
     <!-- Hero -->
     <section id="hero">
-        <p class="project-category">Capstone Team 21</p>  <!-- EDIT: category / team -->
-        <h1>Trash Retrieval Drone</h1>              <!-- EDIT: project title -->
-        <p class="hero-byline">Mechanical Design &nbsp;·&nbsp; Electrical &nbsp;·&nbsp; Software</p> <!-- EDIT: disciplines -->
+        <p class="project-category">Dominic Nguyen</p>
+        <h1>Trash Retrieval Drone</h1>
+        <p class="hero-byline">3D Printing &nbsp;·&nbsp; Mechanical Design &nbsp;·&nbsp; Capstone Team Project</p>
     </section>
 
     <!-- Hero Image -->
     <div style="background: var(--dark); padding-bottom: 60px;">
         <div class="hero-image-wrap">
-            <img src="assets/images/Drone.jpg" alt="Trash Retrieval Drone">  <!-- EDIT: image path -->
+            <img src="assets/images/TrashDrone.jpg" alt="Trash Retrieval Drone in flight">
         </div>
     </div>
 
@@ -364,16 +358,18 @@
             <div class="section-rule"><h2 class="block_title">Overview</h2></div>
             <div class="overview-grid">
                 <div class="overview-text">
-                    <!-- EDIT: replace with your project description -->
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. This project involved designing and building an autonomous drone capable of detecting and retrieving trash in outdoor environments.</p>
-                    <p>The system integrates computer vision, a custom mechanical gripper, and real-time flight control to autonomously locate, pick up, and deposit waste items.</p>
+                    <p>The Trash Retrieval Drone is an 8-month UBC MECH 458 capstone project developed for client Dr. Mike Van der Loos, inspired by his experience with persistent litter along trails near Mt. Everest Base Camp in Nepal. The goal was to build a semi-autonomous drone capable of locating and retrieving scattered litter from terrain that is difficult or dangerous for people to access.</p>
+                    <p>The final system is a quadcopter with a custom 2-prong claw suspended by a motor-driven winch. The operator flies the drone to a litter item using a live camera feed, lowers the claw via the winch, grips the item, and returns it for deposit. The integrated prototype successfully collected approximately 50% of target litter types and demonstrated a best-case retrieval time of 1 minute 24 seconds.</p>
+                    <p>My primary contributions were designing and iterating the pickup mechanism (the claw and winch system) and producing all 3D-printed components across both drone platforms throughout the project.</p>
                 </div>
                 <ul class="meta-list">
-                    <li><span class="label">Year</span>       <span class="value">2024</span></li>          <!-- EDIT -->
-                    <li><span class="label">Team</span>       <span class="value">Capstone Team 21</span></li> <!-- EDIT -->
-                    <li><span class="label">Duration</span>   <span class="value">8 months</span></li>      <!-- EDIT -->
-                    <li><span class="label">My Role</span>    <span class="value">Mechanical Lead</span></li> <!-- EDIT -->
-                    <li><span class="label">Status</span>     <span class="value">Completed</span></li>     <!-- EDIT -->
+                    <li><span class="label">Year</span>          <span class="value">2025 – 2026</span></li>
+                    <li><span class="label">Duration</span>      <span class="value">8 months</span></li>
+                    <li><span class="label">My Role</span>       <span class="value">Manipulator Design &amp; 3D Printing</span></li>
+                    <li><span class="label">Team Size</span>     <span class="value">6 members</span></li>
+                    <li><span class="label">Platform</span>      <span class="value">Quadcopter (4S LiPo)</span></li>
+                    <li><span class="label">Controller</span>    <span class="value">Pixhawk (ArduPilot)</span></li>
+                    <li><span class="label">Status</span>        <span class="value">Delivered to Client</span></li>
                 </ul>
             </div>
         </section>
@@ -382,57 +378,100 @@
         <section id="details">
             <div class="section-rule"><h2 class="block_title">Skills Used</h2></div>
             <div class="tags">
-                <!-- EDIT: add/remove tags to match your project -->
                 <span class="tag">CAD / SolidWorks</span>
-                <span class="tag">3D Printing</span>
-                <span class="tag">Python</span>
-                <span class="tag">ROS</span>
-                <span class="tag">Computer Vision</span>
-                <span class="tag">PCB Design</span>
-                <span class="tag">PID Control</span>
+                <span class="tag">3D Printing (PLA &amp; TPU)</span>
+                <span class="tag">Mechanism Design</span>
+                <span class="tag">Servo Actuation</span>
+                <span class="tag">DC Motor &amp; H-Bridge</span>
+                <span class="tag">Rapid Prototyping</span>
+                <span class="tag">Downdraft Analysis</span>
+                <span class="tag">Systems Integration</span>
+                <span class="tag">Design Iteration</span>
+                <span class="tag">Verification &amp; Validation</span>
             </div>
+        </section>
+
+        <!-- Details -->
+        <section id="components" style="margin-bottom: 70px;">
+            <div class="section-rule"><h2 class="block_title">Details</h2></div>
+
+            <!-- Claw Design -->
+            <div style="margin-bottom: 50px;">
+                <h3 class="component-heading">Claw Design &amp; Iteration</h3>
+                <div class="two-col-images">
+                    <img src="assets/images/ClawIteration1.jpg" alt="2-Prong Claw Iteration 1">
+                    <img src="assets/images/ClawIteration2.jpg" alt="2-Prong Claw Iteration 2 (Final)">
+                </div>
+                <p class="component-text">The claw went through several design generations before reaching the final prototype. Early concepts (an octopus-inspired TPU tentacle, a toothed bear claw with a flexible mesh net, a DC motor-driven crusher claw, and a worm-gear-driven 3-prong design) were each prototyped and evaluated for gripping performance, weight, and reliability. Each design revealed a new failure mode that shaped the next iteration.</p>
+                <p class="component-text" style="margin-top: 12px;">The first iteration of the 2-prong claw used a parallelogram linkage to keep the hands parallel throughout the closing motion, and concave hand profiles to grip tipped-over cylinders like cans and bottles. While effective in isolation, the mechanism was too heavy and oversized for the drone's payload budget.</p>
+
+                <div class="callout">
+                    <strong>Key design shift</strong>
+                    The second iteration replaced the parallelogram linkage with a simple direct-drive gear system, swapped to a lighter 9-gram servo, and enlarged the hand profiles to reduce alignment sensitivity during pickup. These changes cut significant weight from the manipulator, directly reducing propeller downdraft, while maintaining the gripping capability needed for the target litter range. This version was carried into the final prototype.
+                </div>
+
+                <p class="component-text">The final claw was able to pick up nearly every litter item in our target collection when tested independently from flight, confirming the mechanism design was sound. The remaining challenge shifted to the interaction between downdraft and light items such as wrappers and chips bags, which would blow away before the claw could reach them.</p>
+            </div>
+
+            <!-- Winch System -->
+            <div style="margin-bottom: 50px;">
+                <h3 class="component-heading">Winch System</h3>
+                <img src="assets/images/ClawWinch.jpg" alt="Claw and Winch assembly" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
+                <p class="component-text">The winch suspends the claw below the drone on two parallel fishing lines, allowing it to be lowered to ground level while the drone holds altitude above the worst of the downdraft. Keeping the drone higher during pickup was critical: flight tests showed the large-format drone could hover as low as 30 cm before disturbing lightweight litter, while the claw could descend a further 50–70 cm on the winch line to reach the item.</p>
+                <p class="component-text" style="margin-top: 12px;">The winch drum and housing were fully 3D-printed in PLA. A small pre-geared hobby DC motor drives the drum and is self-locking when unpowered, preventing the claw from free-spooling during flight. Two parallel lines run from the spool to the claw, stopping it from rotating or angling as it raises and lowers. This is a subtle but important detail for repeatable alignment over a target.</p>
+
+                <div class="callout">
+                    <strong>Control integration</strong>
+                    The winch motor is driven through an H-bridge wired to two PWM outputs on the Pixhawk flight controller. Running the PWM channels at maximum and minimum duty cycle approximates a logic-level on/off signal, which is all the H-bridge needs for directional control. The operator raises and lowers the claw from the same radio controller used to fly the drone, without needing a separate transmitter channel.
+                </div>
+            </div>
+
+            <!-- 3D Printing & Drone Hardware -->
+            <div style="margin-bottom: 50px;">
+                <h3 class="component-heading">3D Printing &amp; Drone Hardware</h3>
+                <div class="two-col-images">
+                    <img src="assets/images/CantedMounts.jpg" alt="Canted motor mounts at 5°, 10°, and 15°">
+                    <img src="assets/images/FinalDrone.jpg" alt="Final drone assembly">
+                </div>
+                <p class="component-text">Nearly every structural part on both drone platforms was 3D printed, making me the production bottleneck and the person most directly responsible for translating design decisions into physical hardware. Parts included the frame plates, landing gear legs, motor mounts, canted motor mounts (iterated at 5°, 10°, and 15°), the winch body, and all claw components. These were printed in either PLA for rigid structure or TPU for flexible gripping elements in earlier claw concepts.</p>
+                <p class="component-text" style="margin-top: 12px;">The canted motor mounts were a focused effort to redirect propeller downdraft away from the centre of the drone, where the claw hangs. Analysis and empirical testing of three cant angles showed that 10° provided the best balance between downdraft deflection and the thrust loss caused by tilting the motors. The 10° mounts were used on the final large-format drone.</p>
+
+                <div class="callout">
+                    <strong>Rapid iteration in practice</strong>
+                    The claw went through five distinct concept designs and two additional sub-iterations on the final 2-prong geometry over the course of the project. With each design change came new parts to print, fit-check, test, and revise. Managing this cycle quickly, tuning wall thicknesses, tolerances, and infill to hit weight targets without sacrificing part integrity, was as important to the outcome as the design decisions themselves.
+                </div>
+            </div>
+
         </section>
 
         <!-- Reflection -->
         <section id="process">
             <div class="section-rule"><h2 class="block_title">Reflection</h2></div>
-            
+
             <div class="step">
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>What Went Well</h4>
-                    <p>EDIT: Talk about the parts of the project you're proud of, what worked better than expected, or any breakthroughs you had.</p>
+                    <p>The final 2-prong claw was a genuinely strong result: simple, light, and capable of gripping almost every item in the litter collection when tested on the bench. The iterative design process worked well; each rejected concept (bear claw, crusher, 3-prong) taught us something concrete that narrowed the design space toward the final solution. The winch integration was also clean; the parallel fishing-line approach eliminated claw rotation and made the whole lowering sequence predictable enough for an operator to use under time pressure. The large drone's 25-minute battery life and GPS loiter mode also exceeded expectations and made in-flight operation far more manageable.</p>
                 </div>
             </div>
-        
+
             <div class="step" style="margin-top: 30px;">
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>Challenges</h4>
-                    <p>EDIT: Describe the biggest obstacles you ran into and how you dealt with them.</p>
+                    <p>Rotor downdraft was the most persistent and underestimated problem. Light items like wrappers, chip bags, and loose paper would simply blow away before the claw reached them, regardless of how well the drone was positioned. The winch-plus-large-drone combination mitigated this substantially, but not completely. The servo wire running from the drone body down to the claw was also a recurring operational headache: being solid-core, it was semi-rigid, which interfered with winch motion and occasionally snagged on landing. With more time, making the claw wireless and battery-operated would eliminate that entire failure mode. We also did not reach any meaningful level of automation, which had been a primary project objective.</p>
                 </div>
             </div>
-        
+
             <div class="step" style="margin-top: 30px;">
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>What I Would Do Differently</h4>
-                    <p>EDIT: If you were starting over, what would you change? Better tools, different approach, more testing, etc.</p>
+                    <p>I would prioritise the wire management problem earlier. Designing dedicated cable guides into the winch housing and claw body from the first iteration, rather than treating it as a final-integration detail, would have saved a lot of operational frustration during testing. I would also explore a wireless claw earlier in the project: removing the tethered servo wire entirely simplifies the winch mechanism, removes a failure point, and makes deployment and retrieval much smoother. On the downdraft side, I'd investigate upward-facing propellers or a ring shroud to reduce downwash at the claw level, given how significantly it limited success with lightweight litter.</p>
                 </div>
             </div>
-        
-        </section>
 
-        <!-- Gallery -->
-        <section id="gallery">
-            <div class="section-rule"><h2 class="block_title">Gallery</h2></div>
-            <div class="gallery-grid">
-                <!-- EDIT: replace src with your actual project images -->
-                <img src="assets/images/Drone.jpg"   alt="Drone overview">
-                <img src="assets/images/Drone.jpg"   alt="Gripper detail">
-                <img src="assets/images/Drone.jpg"   alt="Electronics">
-                <img src="assets/images/Drone.jpg"   alt="Field test">
-            </div>
         </section>
 
         <!-- CTA -->
@@ -443,7 +482,7 @@
     </div><!-- /content -->
 
     <footer>
-        &copy; 2024 Dominic Nguyen
+        &copy; 2026 Dominic Nguyen
     </footer>
 
 </body>
