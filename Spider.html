@@ -399,7 +399,7 @@
                     <img src="assets/images/SpiderBotReal.jpg" alt="Spider Bot physical build">
                 </div>
                 <p class="component-text">The chassis and all leg components were designed in SolidWorks and printed in PLA. The four legs attach symmetrically to the corners of a central body plate that houses the electronics. Each leg consists of a hip segment driven by the first servo and a lower limb driven by the second, giving each leg its two degrees of freedom.</p>
-                <p class="component-text" style="margin-top: 12px;">The leg geometry was kept simple to make gait programming more tractable on a first build. Hot glue tips at the end of each foot improve grip on flat surfaces. All servo mounts use a slotted design so that horn alignment can be adjusted without reprinting parts.</p>
+                <p class="component-text" style="margin-top: 12px;">The leg geometry was kept simple to make programming more tractable on a first build. Hot glue tips at the end of each foot improve grip on flat surfaces. All servo mounts use a slotted design so that horn alignment can be adjusted without reprinting parts.</p>
 
                 <div class="callout">
                     <strong>Design note</strong>
@@ -425,9 +425,9 @@
             <div style="margin-bottom: 50px;">
                 <h3 class="component-heading">Firmware</h3>
                 <p class="component-text">The firmware runs on the ESP32 using the Arduino framework. Each servo position is set by writing a target angle to the PCA9685 over I2C, which the driver converts into the appropriate pulse width for that channel. Servo positions for each leg are stored as angle pairs and interpolated smoothly to avoid sharp current spikes from sudden position jumps.</p>
-                <p class="component-text" style="margin-top: 12px;">The walking gait uses a simple alternating pattern where two diagonally opposite legs swing forward while the other two push against the ground. This keeps the robot stable with at least two legs on the ground at any point in the cycle. Gait timing is handled by a software timer loop on the ESP32, with each phase held for a fixed duration tuned manually to achieve stable forward movement.</p>
+                <p class="component-text" style="margin-top: 12px;">Walking uses a simple alternating pattern where two diagonally opposite legs swing forward while the other two push against the ground. This keeps the robot stable with at least two legs on the ground at any point in the cycle. Step timing is handled by a software timer loop on the ESP32, with each phase held for a fixed duration tuned manually to achieve stable forward movement.</p>
 
-                <p class="component-text">Control is handled wirelessly through the Dabble app, which communicates with the ESP32 over Bluetooth. Dabble provides a virtual gamepad interface on a smartphone that maps directly to movement commands on the robot, allowing forward, backward, and turning inputs without any custom UI development. The ESP32 receives these commands and translates them into the appropriate gait phase for the servos.</p>
+                <p class="component-text">Control is handled wirelessly through the Dabble app, which communicates with the ESP32 over Bluetooth. Dabble provides a virtual gamepad interface on a smartphone that maps directly to movement commands on the robot, allowing forward, backward, and turning inputs without any custom UI development. The ESP32 receives these commands and translates them into the appropriate step phase for the servos.</p>
 
                 <div class="callout">
                     <strong>Wire tension</strong>
