@@ -399,8 +399,8 @@
             <div style="margin-bottom: 50px;">
                 <h3 class="component-heading">Claw Design &amp; Iteration</h3>
                 <div class="two-col-images">
-                    <img src="assets/images/ClawIteration1.jpg" alt="2-Prong Claw Iteration 1">
-                    <img src="assets/images/ClawIteration2.jpg" alt="2-Prong Claw Iteration 2 (Final)">
+                    <img src="assets/images/ClawV1.png" alt="2-Prong Claw Iteration 1">
+                    <img src="assets/images/ClawFinal.png" alt="2-Prong Claw Iteration 2 (Final)">
                 </div>
                 <p class="component-text">The claw went through several design generations before reaching the final prototype. Early concepts (an octopus-inspired TPU tentacle, a toothed bear claw with a flexible mesh net, a DC motor-driven crusher claw, and a worm-gear-driven 3-prong design) were each prototyped and evaluated for gripping performance, weight, and reliability. Each design revealed a new failure mode that shaped the next iteration.</p>
                 <p class="component-text" style="margin-top: 12px;">The first iteration of the 2-prong claw used a parallelogram linkage to keep the hands parallel throughout the closing motion, and concave hand profiles to grip tipped-over cylinders like cans and bottles. While effective in isolation, the mechanism was too heavy and oversized for the drone's payload budget.</p>
@@ -416,7 +416,7 @@
             <!-- Winch System -->
             <div style="margin-bottom: 50px;">
                 <h3 class="component-heading">Winch System</h3>
-                <img src="assets/images/ClawWinch.jpg" alt="Claw and Winch assembly" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
+                <img src="assets/images/Winch.png" alt="Winch assembly" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
                 <p class="component-text">The winch suspends the claw below the drone on two parallel fishing lines, allowing it to be lowered to ground level while the drone holds altitude above the worst of the downdraft. Keeping the drone higher during pickup was critical: flight tests showed the large-format drone could hover as low as 30 cm before disturbing lightweight litter, while the claw could descend a further 50–70 cm on the winch line to reach the item.</p>
                 <p class="component-text" style="margin-top: 12px;">The winch drum and housing were fully 3D-printed in PLA. A small pre-geared hobby DC motor drives the drum and is self-locking when unpowered, preventing the claw from free-spooling during flight. Two parallel lines run from the spool to the claw, stopping it from rotating or angling as it raises and lowers. This is a subtle but important detail for repeatable alignment over a target.</p>
 
@@ -430,8 +430,8 @@
             <div style="margin-bottom: 50px;">
                 <h3 class="component-heading">3D Printing &amp; Drone Hardware</h3>
                 <div class="two-col-images">
-                    <img src="assets/images/CantedMounts.jpg" alt="Canted motor mounts at 5°, 10°, and 15°">
-                    <img src="assets/images/FinalDrone.jpg" alt="Final drone assembly">
+                    <img src="assets/images/CantAngles.png" alt="Canted motor mounts at 5°, 10°, and 15°">
+                    <img src="assets/images/DroneFinal.png" alt="Final drone assembly">
                 </div>
                 <p class="component-text">Nearly every structural part on both drone platforms was 3D printed, making me the production bottleneck and the person most directly responsible for translating design decisions into physical hardware. Parts included the frame plates, landing gear legs, motor mounts, canted motor mounts (iterated at 5°, 10°, and 15°), the winch body, and all claw components. These were printed in either PLA for rigid structure or TPU for flexible gripping elements in earlier claw concepts.</p>
                 <p class="component-text" style="margin-top: 12px;">The canted motor mounts were a focused effort to redirect propeller downdraft away from the centre of the drone, where the claw hangs. Analysis and empirical testing of three cant angles showed that 10° provided the best balance between downdraft deflection and the thrust loss caused by tilting the motors. The 10° mounts were used on the final large-format drone.</p>
