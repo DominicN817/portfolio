@@ -296,6 +296,64 @@
             border-color: var(--white);
         }
 
+        /* ── Upcoming / In-Progress Cards ── */
+        .project-card.upcoming {
+            background: #222;
+            cursor: default;
+        }
+
+        .project-card.upcoming .card-placeholder {
+            width: 100%;
+            display: block;
+            aspect-ratio: 4/3;
+            background: repeating-linear-gradient(
+                45deg,
+                #242424,
+                #242424 6px,
+                #1e1e1e 6px,
+                #1e1e1e 12px
+            );
+        }
+
+        .project-card.upcoming .upcoming-caption {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 28px;
+            text-align: center;
+        }
+
+        .in-progress-badge {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 5px 14px;
+            margin-bottom: 18px;
+            opacity: 0.7;
+        }
+
+        .upcoming-caption h3 {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+            letter-spacing: 0.06em;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 6px;
+        }
+
+        .upcoming-caption span {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            color: rgba(136,136,136,0.45);
+        }
+
         #contact { background: var(--mid); color: var(--white); }
         #contact .block_title { color: var(--white); }
         #contact .section-rule::before,
@@ -416,6 +474,26 @@
             <div class="section-rule"><h2 class="block_title">Projects</h2></div>
             <div class="projects-grid">
 
+                <!-- Upcoming Projects (shown first as most recent) -->
+                <div class="project-card upcoming">
+                    <div class="card-placeholder"></div>
+                    <div class="upcoming-caption">
+                        <span class="in-progress-badge">In Progress</span>
+                        <h3>Jumping BLDC Robot Leg</h3>
+                        <span>Dominic Nguyen</span>
+                    </div>
+                </div>
+
+                <div class="project-card upcoming">
+                    <div class="card-placeholder"></div>
+                    <div class="upcoming-caption">
+                        <span class="in-progress-badge">In Progress</span>
+                        <h3>8010 BLDC Internal Cycloidal Actuator</h3>
+                        <span>Dominic Nguyen</span>
+                    </div>
+                </div>
+
+                <!-- Completed Projects -->
                 <div class="project-card">
                     <img src="assets/images/Drone.jpg" alt="Trash Retrieval Drone">
                     <div class="project-caption">
@@ -463,7 +541,7 @@
 
                 <div>
                     <h2 class="con-title">About me</h2>
-                    <p class="about-text">I am a mechatronics graduate from the University of British Columbia, specializing in prototyping and controls. I have a particular passion for hardware, working with sensors, designing and troubleshooting circuitry, and doing the hands-on bench work that brings systems to life. I am most at home when theory meets the physical world. Whether integrating microcontrollers, tuning a control loop, or building out a proof-of-concept from scratch, I enjoy every step of the process from initial schematic to a working system in my hands. </p>
+                    <p class="about-text">I am a mechatronics graduate from the University of British Columbia, specializing in prototyping and controls. I have a particular passion for hardware, working with sensors, designing and troubleshooting circuitry, and doing the hands-on bench work that brings systems to life. I am most at home when theory meets the physical world. Whether integrating microcontrollers, tuning a control loop, or building out a proof-of-concept from scratch, I enjoy every step of the process from initial schematic to a working system in my hands.</p>
                     <ul class="address-list">
                         <li>✉ <span>DominicNguyen817@gmail.com</span></li>
                     </ul>
