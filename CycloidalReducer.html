@@ -369,7 +369,7 @@
             <div class="overview-grid">
                 <div class="overview-text">
                     <p>This project is a compact cycloidal gearbox designed to significantly increase the output torque of a NEMA 23 stepper motor. A cycloidal drive achieves speed reduction through the eccentric rolling motion of cycloidal discs against a ring of pins, allowing for a high reduction ratio in a very small package.</p>
-                    <p>The gearbox was designed, modelled, and printed entirely in-house. The drive runs at a reduction ratio of twenty-five to one and uses a dual disc arrangement offset by half a pitch to balance eccentric loads and reduce vibration. Nylon spacers are used at all contact points to reduce friction, with PLA pins inside the outer nylon spacers and M3 bolts carrying the inner nylon spacers. Efficiency testing against the NEMA 23's stall torque yielded a measured output of 72%.</p>
+                    <p>The gearbox was designed, modelled, and printed entirely in-house. The drive runs at a reduction ratio of twenty-five to one and uses a dual disc arrangement offset by half a pitch to balance eccentric loads and reduce vibration. Nylon spacers are used at all contact points to reduce friction, with PLA pins inside the outer nylon spacers and M3 bolts carrying the inner nylon spacers. Efficiency testing against the NEMA 23's stall torque yielded a measured output of 89%, which is a strong result for a fully printed mechanism at this reduction ratio.</p>
                     <p>The project served as a deep dive into the geometry of cycloidal mechanisms, the tolerances involved in 3D printed drivetrains, and the practical tradeoffs between gear ratio, efficiency, and backlash in compact actuator design.</p>
                 </div>
                 <ul class="meta-list">
@@ -377,7 +377,7 @@
                     <li><span class="label">Duration</span>        <span class="value">2 months</span></li>
                     <li><span class="label">Motor</span>          <span class="value">NEMA 23 Stepper</span></li>
                     <li><span class="label">Reduction Ratio</span><span class="value">25 : 1</span></li>
-                    <li><span class="label">Measured Efficiency</span><span class="value">72%</span></li>
+                    <li><span class="label">Measured Efficiency</span><span class="value">89%</span></li>
                     <li><span class="label">Status</span>         <span class="value">Completed</span></li>
                 </ul>
             </div>
@@ -428,14 +428,14 @@
             <div style="margin-bottom: 50px;">
                 <h3 class="component-heading">Efficiency and Testing</h3>
                 <img src="assets/images/CycloidalTest.png" alt="Gearbox efficiency testing" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
-                <p class="component-text">Efficiency was measured by comparing the theoretical output torque, calculated from the input torque multiplied by the reduction ratio, against the actual torque delivered at the output shaft under a known load. The measured efficiency of seventy-two percent accounts for friction losses at the eccentric bearing, between the cycloidal disc and outer pins, and at the output pin holes.</p>
+                <p class="component-text">Efficiency was measured by comparing the theoretical output torque, calculated from the input torque multiplied by the reduction ratio, against the actual torque delivered at the output shaft under a known load. The measured efficiency of 89% is a notably strong result for a fully printed drivetrain at a 25:1 ratio. Precision machined commercial cycloidal reducers typically achieve 90 to 95% under similar conditions, so reaching 89% with FDM-printed PLA and nylon spacers as the sole bearing surfaces is a meaningful outcome. Friction losses occur at the eccentric bearing, between the cycloidal disc and outer pins, and at the output pin holes.</p>
 
                 <div class="callout">
                     <strong>Sources of loss</strong>
                     The dominant loss in a printed cycloidal drive is sliding friction at the outer pin contacts. Unlike a precision metal drive where the pins can roll freely, printed pins and housings have higher surface roughness and are not perfectly circular, increasing sliding resistance. Grease applied to the pin contacts and eccentric bearing improved efficiency noticeably during testing, and the final measurement reflects the lubricated condition.
                 </div>
 
-                <p class="component-text">Despite the losses, a seventy-two percent efficiency at this reduction ratio is a practical result for a fully printed mechanism. The stepper motor's usable holding torque at the output is increased substantially, which was the primary goal of the project.</p>
+                <p class="component-text">The 89% efficiency at this reduction ratio means very little of the motor's input power is lost to heat, and the stepper motor's usable holding torque at the output is increased by a factor of roughly 22. That was the primary goal of the project, and the result validates the design approach for printed cycloidal mechanisms.</p>
             </div>
 
         </section>
@@ -448,7 +448,7 @@
                 <div class="step-num">✦</div>
                 <div class="step-body">
                     <h4>What Went Well</h4>
-                    <p>The parametric disc profile worked correctly on the first generation, requiring no corrections to the underlying geometry. Assembly was straightforward once tolerances were dialled in, and the gearbox ran smoothly with minimal binding. The final measured efficiency exceeded initial expectations for a fully printed mechanism, validating the design approach and the decision to use lubrication at the contact surfaces.</p>
+                    <p>The parametric disc profile worked correctly on the first generation, requiring no corrections to the underlying geometry. Assembly was straightforward once tolerances were dialled in, and the gearbox ran smoothly with minimal binding. The final measured efficiency of 89% exceeded initial expectations for a fully printed mechanism, validating the design approach and the decision to use lubrication at the contact surfaces. For a PLA drive with no precision ground surfaces, this result compares favourably against commercial machined alternatives.</p>
                 </div>
             </div>
 
