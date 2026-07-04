@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <title>Propulsive Mechanical Spanner: VEX Gap-Crossing Robot · Dominic Nguyen</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link href='https://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --dark:    #1a1a1a;
+            --mid:     #2d2d2d;
+            --light:   #f5f5f5;
+            --white:   #ffffff;
+            --accent:  #888;
+            --border:  #e0e0e0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        /* ── Navigation ── */
+        #navigation {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--dark);
+            padding: 18px 0;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-text {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 300;
+            font-size: 1.4rem;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .back-link {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 0.85rem;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--white); }
+
+        /* ── Hero ── */
+        #hero {
+            background: var(--dark);
+            color: var(--white);
+            padding: 90px 30px 70px;
+            text-align: center;
+        }
+
+        .project-category {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 0.78rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        #hero h1 {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 200;
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            letter-spacing: 0.04em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero-byline {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Hero Image ── */
+        .hero-image-wrap {
+            max-width: 600px;
+            margin: 0 auto;
+            transform: translateY(-50px);
+        }
+
+        .hero-image-wrap img {
+            width: 100%;
+            display: block;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        /* ── Content ── */
+        #content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 30px 60px;
+        }
+
+        /* ── Section title ── */
+        .block_title {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 200;
+            font-size: 2rem;
+            letter-spacing: 0.08em;
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .section-rule {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .section-rule::before,
+        .section-rule::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* ── Overview ── */
+        #overview {
+            margin-bottom: 70px;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .overview-text p {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 16px;
+        }
+
+        .meta-list {
+            list-style: none;
+            border-top: 1px solid var(--border);
+        }
+
+        .meta-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.88rem;
+        }
+
+        .meta-list li .label {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            color: var(--accent);
+            padding-top: 2px;
+        }
+
+        .meta-list li .value {
+            font-weight: 400;
+            color: var(--dark);
+            text-align: right;
+        }
+
+        /* ── Details / Skills tags ── */
+        #details {
+            margin-bottom: 70px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .tag {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 1px solid var(--dark);
+            padding: 5px 14px;
+            color: var(--dark);
+        }
+
+        /* ── Steps / Process ── */
+        #process, #reflection {
+            margin-bottom: 70px;
+        }
+
+        .steps {
+            counter-reset: step;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 48px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .step-num {
+            counter-increment: step;
+            font-family: 'Dosis', sans-serif;
+            font-weight: 200;
+            font-size: 2rem;
+            color: var(--border);
+            line-height: 1;
+        }
+
+        .step-body h4 {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 400;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            letter-spacing: 0.04em;
+        }
+
+        .step-body p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* ── Timeline ── */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            border-left: 2px solid var(--dark);
+            margin-left: 6px;
+        }
+
+        .timeline-row {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 20px;
+            padding: 14px 0 14px 26px;
+            position: relative;
+        }
+
+        .timeline-row::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--dark);
+        }
+
+        .timeline-time {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.82rem;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            padding-top: 2px;
+        }
+
+        .timeline-label {
+            font-size: 0.97rem;
+            color: #333;
+        }
+
+        /* ── Gallery ── */
+        #gallery {
+            margin-bottom: 70px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border: 1px solid var(--border);
+            transition: opacity 0.2s;
+        }
+
+        .gallery-grid img:hover { opacity: 0.85; }
+
+        .gallery-grid figure {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-grid figcaption {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* ── Back to projects CTA ── */
+        #cta {
+            text-align: center;
+            padding: 60px 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .btn-outline {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 0.82rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--dark);
+            border: 1px solid var(--dark);
+            padding: 14px 36px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--dark);
+            color: var(--accent);
+            text-align: center;
+            padding: 24px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* ── Component section headings ── */
+        .component-heading {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 300;
+            font-size: 1.3rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 14px;
+        }
+
+        .component-text {
+            font-size: 0.97rem;
+            color: #555;
+            line-height: 1.85;
+        }
+
+        .component-text ul {
+            margin: 10px 0 10px 20px;
+        }
+
+        /* ── Spec / issue table ── */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin-top: 20px;
+        }
+
+        .spec-table th {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            color: var(--accent);
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .spec-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: #444;
+            vertical-align: top;
+        }
+
+        .spec-table tr:last-child td { border-bottom: none; }
+
+        /* ── Callout box ── */
+        .callout {
+            border-left: 3px solid var(--dark);
+            padding: 16px 20px;
+            background: var(--light);
+            margin: 24px 0;
+            font-size: 0.94rem;
+            color: #444;
+        }
+
+        .callout strong {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 6px;
+            color: var(--accent);
+        }
+
+        /* ── Two-photo row ── */
+        .photo-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .photo-row img {
+            width: 100%;
+            border: 1px solid var(--border);
+            display: block;
+        }
+
+        .photo-row-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .photo-row-3 img {
+            width: 100%;
+            border: 1px solid var(--border);
+            display: block;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 680px) {
+            .overview-grid { grid-template-columns: 1fr; gap: 30px; }
+            .gallery-grid  { grid-template-columns: 1fr; }
+            .photo-row, .photo-row-3 { grid-template-columns: 1fr; }
+            .timeline-row { grid-template-columns: 100px 1fr; }
+            .hero-image-wrap { transform: translateY(20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <section id="navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="logo-text">Dominic Nguyen</a>
+            <a href="index.html#portfolio" class="back-link">← All Projects</a>
+        </div>
+    </section>
+
+    <!-- Hero -->
+    <section id="hero">
+        <p class="project-category">Team Woman in STEM &nbsp;·&nbsp; Hatch VEX Hackathon</p>
+        <h1>Propulsive Mechanical Spanner</h1>
+        <p class="hero-byline">Mechanical Design &nbsp;·&nbsp; Rapid Prototyping &nbsp;·&nbsp; VEX Embedded Systems</p>
+    </section>
+
+    <!-- Hero Image -->
+    <div style="background: var(--dark); padding-bottom: 60px;">
+        <div class="hero-image-wrap">
+            <img src="assets/images/hero.jpg" alt="Propulsive Mechanical Spanner top-down view">
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content">
+
+        <!-- Overview -->
+        <section id="overview">
+            <div class="section-rule"><h2 class="block_title">Overview</h2></div>
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <p>The Propulsive Mechanical Spanner (PMS) was built in a single day for a VEX hackathon hosted by Hatch as part of the 2026 UBC Senior Engineering Design Competition. The prompt: design a device, built entirely from provided VEX components, capable of autonomously crossing a gap that grows by two inches every round.</p>
+                    <p>Rather than driving across the gap directly, PMS bridges it. Two extendable arms rotate downward from the chassis to physically span the widening gap, the drivetrain then rolls the body across the arms like a ramp, and the arms fold back up once the robot has cleared onto the far side.</p>
+                    <p>The event ran from noon on day one to 5pm the next day. Three competing concepts were sketched and evaluated within the first hour, the winning "Wiper Bridge" design was chosen by consensus, and the rest of day one was spent building, breaking, and fixing the mechanism as the gap kept growing. After dinner, the remaining time went into upgrading the arms to span even larger gaps and troubleshooting the mechanism ahead of the final runs. The team placed second out of five groups.</p>
+                </div>
+                <ul class="meta-list">
+                    <li><span class="label">Year</span>       <span class="value">2026</span></li>
+                    <li><span class="label">Duration</span>   <span class="value">29-hour hackathon</span></li>
+                    <li><span class="label">My Role</span>    <span class="value">Mechanical Lead</span></li>
+                    <li><span class="label">Team</span>       <span class="value">Emma, Michael, Dominic Nguyen, Arman, Nicholas Yap</span></li>
+                    <li><span class="label">Host</span>       <span class="value">Hatch</span></li>
+                    <li><span class="label">Result</span>     <span class="value">2nd of 5 teams</span></li>
+                    <li><span class="label">Status</span>     <span class="value">Completed</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Used -->
+        <section id="details">
+            <div class="section-rule"><h2 class="block_title">Skills Used</h2></div>
+            <div class="tags">
+                <span class="tag">VEX Mechanical Build</span>
+                <span class="tag">Rapid Concept Iteration</span>
+                <span class="tag">Gear Ratio Design</span>
+                <span class="tag">VEXcode Blocks</span>
+                <span class="tag">Ultrasonic Sensing</span>
+                <span class="tag">Limit Switch Debounce Debugging</span>
+                <span class="tag">Torque Testing</span>
+                <span class="tag">Custom Fabricated Parts</span>
+                <span class="tag">Team Collaboration</span>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section id="team" style="margin-bottom: 70px;">
+            <div class="section-rule"><h2 class="block_title">Team Structure</h2></div>
+            <div class="photo-row">
+                <img src="assets/images/team-structure.jpg" alt="Testing the arm assembly against a whiteboard sketch">
+                <img src="assets/images/team-photo.jpg" alt="Team Woman in STEM holding the finished robot">
+            </div>
+            <table class="spec-table">
+                <thead>
+                    <tr><th>Role</th><th>Member(s)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Software Lead & Woman in STEM</td><td>Emma</td></tr>
+                    <tr><td>Mechanical Lead</td><td>Michael, Dominic Nguyen</td></tr>
+                    <tr><td>Instrumentation & Integration Lead</td><td>Arman</td></tr>
+                    <tr><td>Mechanical / Documentation</td><td>Nicholas Yap</td></tr>
+                </tbody>
+            </table>
+            <p class="component-text" style="margin-top: 16px;">We worked as a distributed, collaborative team: group planning and ideation up front, then parallel task completion once the concept was locked, with everyone sharing prior VEX knowledge as issues came up.</p>
+        </section>
+
+        <!-- Schedule -->
+        <section id="schedule" style="margin-bottom: 70px;">
+            <div class="section-rule"><h2 class="block_title">Event Schedule</h2></div>
+            <p class="component-text" style="margin-bottom: 8px;">Day One</p>
+            <div class="timeline">
+                <div class="timeline-row"><div class="timeline-time">12:00 – 12:30</div><div class="timeline-label">Competition rule overview</div></div>
+                <div class="timeline-row"><div class="timeline-time">12:30 – 12:45</div><div class="timeline-label">Individual concept generation / brainstorming</div></div>
+                <div class="timeline-row"><div class="timeline-time">12:45 – 1:30</div><div class="timeline-label">Concept evaluation / equipment testing</div></div>
+                <div class="timeline-row"><div class="timeline-time">1:30 – 2:00</div><div class="timeline-label">Lunch</div></div>
+                <div class="timeline-row"><div class="timeline-time">2:00 – 2:20</div><div class="timeline-label">Concept chosen and planning</div></div>
+                <div class="timeline-row"><div class="timeline-time">2:20 – 5:00</div><div class="timeline-label">Mechanical sub-assembly build / software development</div></div>
+                <div class="timeline-row"><div class="timeline-time">5:00 – 8:00</div><div class="timeline-label">Mechanical assembly / full-system testing</div></div>
+                <div class="timeline-row"><div class="timeline-time">8:00 – 10:00</div><div class="timeline-label">Dinner</div></div>
+                <div class="timeline-row"><div class="timeline-time">10:00 – late</div><div class="timeline-label">Upgrading the arms to span larger gaps, troubleshooting</div></div>
+            </div>
+            <p class="component-text" style="margin: 24px 0 8px;">Day Two</p>
+            <div class="timeline">
+                <div class="timeline-row"><div class="timeline-time">morning</div><div class="timeline-label">Final troubleshooting and last-minute upgrades</div></div>
+                <div class="timeline-row"><div class="timeline-time">until 5:00</div><div class="timeline-label">Competition rounds, gap widening by two inches each round</div></div>
+            </div>
+        </section>
+
+        <!-- Concept Generation -->
+        <section id="concepts" style="margin-bottom: 70px;">
+            <div class="section-rule"><h2 class="block_title">Concept Generation</h2></div>
+            <p class="component-text">Each team member sketched an independent concept for crossing the gap before we regrouped to compare approaches.</p>
+
+            <div style="margin-top: 24px;">
+                <h3 class="component-heading">Topple Bot</h3>
+                <p class="component-text">A vertical track on a hinge would be tipped forward by a servo (or slowly lowered under control, since it also had to be pulled back upright), a chain drive would then run the payload carriage across the fallen track, and the track would be pulled back up once the payload reached the far side. Gap span was limited by the length of the track piece, and the chain-drive gears had to stay separate from the brain and payload carriage.</p>
+            </div>
+
+            <div style="margin-top: 24px;">
+                <h3 class="component-heading">Track Laying Bot</h3>
+                <p class="component-text">Two wheeled carts, each carrying part of the payload, would lay a flexible track between them as they approached the gap, using a vision sensor to align, then drive across the track they had just laid.</p>
+            </div>
+
+            <div style="margin-top: 24px;">
+                <h3 class="component-heading">Wiper Bridge Bot</h3>
+                <p class="component-text">Motor-driven arms mounted at the front and back of the chassis would rotate outward and down, like windshield wipers, extending into a bridge across the gap. A photo sensor would detect when the arms were fully extended, the drivetrain would roll the body across, sensors would detect it had reached the far table, and the arms would fold back up to finish. This concept became PMS.</p>
+            </div>
+        </section>
+
+        <!-- Concept Selection -->
+        <section id="selection" style="margin-bottom: 70px;">
+            <div class="section-rule"><h2 class="block_title">Concept Selection</h2></div>
+            <p class="component-text">We eliminated ideas based on feasibility with the parts on hand, most notably cutting Topple Bot since no chain drive components were available in the VEX kit. Before committing to Wiper Bridge, we checked motor torque and confirmed the ultrasonic range sensor could reliably detect the far table edge.</p>
+            <div class="photo-row">
+                <img src="assets/images/torque-test.jpg" alt="Checking motor torque on a VEX bracket">
+                <img src="assets/images/sensor-test.jpg" alt="Testing the ultrasonic range sensor against the VEX brain">
+            </div>
+            <p class="component-text" style="margin-top: 16px;">The team unanimously agreed to proceed with the Wiper Bridge concept.</p>
+        </section>
+
+        <!-- Planning + Sub-assembly -->
+        <section id="planning" style="margin-bottom: 70px;">
+            <div class="section-rule"><h2 class="block_title">Planning & Sub-Assembly Development</h2></div>
+            <img src="assets/images/detailed-sketch.jpg" alt="Detailed whiteboard sketch of the Wiper Bridge mechanism" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
+            <div class="photo-row">
+                <img src="assets/images/mech-breakdown-arms.jpg" alt="Mechanical breakdown of the arm assemblies">
+                <img src="assets/images/mech-breakdown-apple.jpg" alt="Payload test with an apple strapped to the base">
+            </div>
+            <p class="component-text" style="margin-top: 16px;">The mechanical breakdown split the build into front and rear arm sub-assemblies and a central chassis, while the software plan was written out as a state sequence before it was ever built in VEXcode:</p>
+            <div class="callout" style="margin-top: 16px;">
+                <strong>Planned sequence</strong>
+                On a push-button press, the rear arm goes down, driving until its limit switch releases. The rear motor stops. The front arms go down, and all motors drive forward until the ultrasonic sensor detects the far table and bumper. All motors brake, and all arms return to upright to finish the run.
+            </div>
+        </section>
+
+        <!-- Mechanical Assembly + Testing -->
+        <section id="assembly" style="margin-bottom: 70px;">
+            <div class="section-rule"><h2 class="block_title">Mechanical Assembly & Testing</h2></div>
+            <img src="assets/images/arm-rotator.jpg" alt="Close-up of the arm rotator gear assembly" style="width: 100%; border: 1px solid var(--border); margin-bottom: 16px;">
+            <p class="component-text">The arm rotator went through several rounds of gear-ratio testing to balance arm speed against the torque needed to lift and lower a loaded arm.</p>
+            <div class="photo-row-3">
+                <img src="assets/images/test1.jpg" alt="Early full-mechanism test, arm one">
+                <img src="assets/images/test2.jpg" alt="Early full-mechanism test, arm two">
+                <img src="assets/images/test3.jpg" alt="Early full-mechanism test, arm three">
+            </div>
+            <p class="component-text" style="margin-top: 16px;">This produced a successful run-through with no gap and the switches pressed manually, confirming the mechanism itself worked before wiring in autonomous sensing.</p>
+        </section>
+
+        <!-- Issues + Solutions -->
+        <section id="issues" style="margin-bottom: 70px;">
+            <div class="section-rule"><h2 class="block_title">Issues & Solutions</h2></div>
+
+            <table class="spec-table">
+                <thead>
+                    <tr><th>Issue</th><th>Root Cause</th><th>Solution</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Rear arm not retracting</td>
+                        <td>Interference between arm and chassis</td>
+                        <td>Changed C-channel to L-channel</td>
+                    </tr>
+                    <tr>
+                        <td>Insufficient motor torque</td>
+                        <td>Drove the shaft with two motors instead of one</td>
+                    </tr>
+                    <tr>
+                        <td>System stopping before gap cleared</td>
+                        <td>Limit switch bouncing during deployment triggered the interrupt early</td>
+                        <td>Switched from limit switch to ultrasonic sensor</td>
+                    </tr>
+                    <tr>
+                        <td>Gears free-spinning</td>
+                        <td>Drive-shaft lock failure</td>
+                        <td>Machined and fabricated our own replacement parts</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="photo-row" style="margin-top: 16px;">
+                <img src="assets/images/issue1-photo1.jpg" alt="Rear arm drive shaft with dual motors">
+                <img src="assets/images/issue1-photo2.jpg" alt="Custom fabricated replacement parts">
+            </div>
+
+            <table class="spec-table" style="margin-top: 40px;">
+                <thead>
+                    <tr><th>Issue</th><th>Root Cause</th><th>Solution</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Arms retracting too much</td>
+                        <td>Motor backlash led to imprecise positioning and overshoot</td>
+                        <td>Added a mechanical stop using stand-offs</td>
+                    </tr>
+                    <tr>
+                        <td>Main body not clearing the gap</td>
+                        <td>Passive wheels catching on the arm bridge</td>
+                        <td>Removed the free-spinning wheels, added skids and bumpers instead</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="photo-row" style="margin-top: 16px;">
+                <img src="assets/images/issue2-photo1.jpg" alt="Mechanical stop added to prevent arm overshoot">
+                <img src="assets/images/issue2-photo2.jpg" alt="Skid and bumper added in place of free-spinning wheel">
+            </div>
+        </section>
+
+        <!-- Optimization -->
+        <section id="optimization" style="margin-bottom: 70px;">
+            <div class="section-rule"><h2 class="block_title">Optimization</h2></div>
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <p class="component-text">The first working version was intentionally overbuilt as a platform for later optimization: extra arm torque and more rigidity than strictly necessary, so we would have margin to iterate under time pressure rather than rebuild from scratch.</p>
+                    <p class="component-text" style="margin-top: 12px;">Once we had proven the robot could reliably cross a gap, we spent the remaining rounds extending the arms further to keep pace as the gap grew by two inches each round.</p>
+                </div>
+                <img src="assets/images/optimization.jpg" alt="Extended-arm version of the robot for larger gap crossings" style="width: 100%; border: 1px solid var(--border);">
+            </div>
+        </section>
+
+        <!-- Reflection -->
+        <section id="reflection">
+            <div class="section-rule"><h2 class="block_title">Reflection</h2></div>
+
+            <div class="step">
+                <div class="step-num">✦</div>
+                <div class="step-body">
+                    <h4>What Went Well</h4>
+                    <p>Designing the first version as a future-proof platform meant we had torque and rigidity to spare when it came time to extend the arms for bigger gaps. The ideate-test-select workflow got us to a committed concept fast, and building sub-assemblies in parallel with constant feedback kept the whole team moving instead of bottlenecked on one person. We also learned to manage the trade-off between chasing more performance and the risk of running out of time, including recognizing when to freeze the design and stop tinkering. That work paid off with a second place finish out of five teams.</p>
+                </div>
+            </div>
+
+            <div class="step" style="margin-top: 30px;">
+                <div class="step-num">✦</div>
+                <div class="step-body">
+                    <h4>What Could Be Improved</h4>
+                    <p>The chassis and arms could have been lighter, and several parts were more material-heavy than the loads actually required. Gear ratios were chosen quickly under time pressure and could be better tuned for the torque-versus-speed trade-off. Given more time, we'd also want a full system redesign to remove the bandaid fixes, like the stand-off stops and skid patches, that accumulated during the day, and replace them with parts built to solve those problems from the start.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CTA -->
+        <section id="cta">
+            <a href="index.html#portfolio" class="btn-outline">← Back to all projects</a>
+        </section>
+
+    </div><!-- /content -->
+
+    <footer>
+        &copy; 2026 Dominic Nguyen
+    </footer>
+
+</body>
+</html>
