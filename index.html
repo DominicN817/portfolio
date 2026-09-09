@@ -19,6 +19,7 @@
             --white:  #ffffff;
             --accent: #888;
             --border: #e0e0e0;
+            --status: #b98c2c;
         }
 
         html { scroll-behavior: smooth; }
@@ -296,62 +297,31 @@
             border-color: var(--white);
         }
 
-        /* ── Upcoming / In-Progress Cards ── */
-        .project-card.upcoming {
-            background: #222;
-            cursor: default;
-        }
-
-        .project-card.upcoming .card-placeholder {
-            width: 100%;
-            display: block;
-            aspect-ratio: 4/3;
-            background: repeating-linear-gradient(
-                45deg,
-                #242424,
-                #242424 6px,
-                #1e1e1e 6px,
-                #1e1e1e 12px
-            );
-        }
-
-        .project-card.upcoming .upcoming-caption {
+        /* ── In-Progress badge on an active project card ── */
+        .status-badge {
             position: absolute;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            top: 16px;
+            left: 16px;
+            display: inline-flex;
             align-items: center;
-            padding: 28px;
-            text-align: center;
-        }
-
-        .in-progress-badge {
+            gap: 7px;
             font-family: 'Raleway', sans-serif;
             font-size: 0.65rem;
-            letter-spacing: 0.25em;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--accent);
-            border: 1px solid rgba(255,255,255,0.12);
-            padding: 5px 14px;
-            margin-bottom: 18px;
-            opacity: 0.7;
+            color: var(--white);
+            background: rgba(26,26,26,0.75);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 6px 12px;
+            z-index: 2;
         }
 
-        .upcoming-caption h3 {
-            font-family: 'Dosis', sans-serif;
-            font-weight: 300;
-            font-size: 1.2rem;
-            letter-spacing: 0.06em;
-            color: rgba(255,255,255,0.35);
-            margin-bottom: 6px;
-        }
-
-        .upcoming-caption span {
-            font-family: 'Raleway', sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 0.12em;
-            color: rgba(136,136,136,0.45);
+        .status-badge .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--status);
+            flex-shrink: 0;
         }
 
         #contact { background: var(--mid); color: var(--white); }
@@ -474,13 +444,14 @@
             <div class="section-rule"><h2 class="block_title">Projects</h2></div>
             <div class="projects-grid">
 
-                <!-- Upcoming Project -->
-                <div class="project-card upcoming">
-                    <div class="card-placeholder"></div>
-                    <div class="upcoming-caption">
-                        <span class="in-progress-badge">In Progress</span>
-                        <h3>8110 BLDC Internal Cycloidal Actuator</h3>
+                <!-- In-Progress Project -->
+                <div class="project-card">
+                    <span class="status-badge"><span class="status-dot"></span>In Progress</span>
+                    <img src="assets/images/ActuatorIcon.jpg" alt="9:1 Internal Cycloidal Actuator">
+                    <div class="project-caption">
+                        <h3>9:1 Internal Cycloidal Actuator</h3>
                         <span>Dominic Nguyen</span>
+                        <a href="actuator.html" class="btn-outline">Take a look</a>
                     </div>
                 </div>
 
